@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .version("1.1.0")
                 .license("Apache 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("Rambos Web Portal", "9854398543", "rambosadmission@ritedu.com"))
+                .contact(new Contact("Rambos Web Portal", "http://localhost:3000", "rambosadmission@ritedu.com"))
                 .build();
     }
 

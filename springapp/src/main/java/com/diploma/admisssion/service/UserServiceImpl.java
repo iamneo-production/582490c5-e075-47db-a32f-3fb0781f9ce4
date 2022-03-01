@@ -41,23 +41,6 @@ public class UserServiceImpl implements UserService{
         return userRepo.findByEmail(email) !=null ? true : false;
     }
 
-//	public String logUser(String email, String password) {
-//		Base64.Encoder encoder = Base64.getEncoder();
-//		String pwd = encoder.encodeToString(password.getBytes());
-//		User ud = userRepo.findByEmailAndPwd(email, pwd);
-//		if(ud!=null)
-//		{
-//			if(ud.getUser_type().equals("1"))
-//			{
-//				System.out.println("Admin");
-//				return "Admin";
-//			}
-//			System.out.println(ud.getUser_type());
-//			
-//		}
-//		return "User";
-//	}
-
 	@Override
 	public boolean isValid(String email, String password) {
 		Base64.Encoder encoder = Base64.getEncoder();
