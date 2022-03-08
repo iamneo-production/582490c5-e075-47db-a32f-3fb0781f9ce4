@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CoursesDataService from "../CourseService-User/CoursesService-User";
+import InstituteDataService from "../Institute-Service/InstituteService-User";
 import { Link } from "react-router-dom";
 
 export default class CoursesList extends Component{
@@ -93,7 +94,7 @@ export default class CoursesList extends Component{
                     />
                     <div className="input-group-append">
                         <button
-                            className="btn btn-outline-secondary"
+                            className="btn btn-primary"
                             type="button"
                             onClick={this.searchTitle}
                         >
@@ -102,10 +103,10 @@ export default class CoursesList extends Component{
                     </div>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-lg-6">
                     <h4 class="text-white bg-dark">Courses List</h4>
 
-                    <ul className="list-group">
+                    <ul className="list-group list-group-numbered">
                         {courses &&
                             courses.map((course, index) => (
                                 <li
@@ -116,7 +117,7 @@ export default class CoursesList extends Component{
                                     onClick={() => this.setActiveCourse(course, index)}
                                     key={index}
                                 >
-                                    {course.title}
+                                    {course.title} -  Indian Institute of Technology
                                 </li>
                             ))}
                     </ul>
@@ -144,6 +145,7 @@ export default class CoursesList extends Component{
                         </div>
                     )}
                 </div>
+                
             </div>
 
         )
