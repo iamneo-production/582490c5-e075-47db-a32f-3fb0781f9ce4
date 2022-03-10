@@ -3,7 +3,9 @@ package com.diploma.admisssion.controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,6 +51,51 @@ public class CourseController {
 		return new ResponseEntity<>(courses, HttpStatus.OK);
 		
 	}
+
+	@GetMapping("/getbyId")
+	@ApiOperation("Fetch the course by Course id")
+	public ResponseEntity<Courses> getbyId(@RequestParam(required = true) int id){
+		if(courseservice.courseDetails(id)!=null){
+			return  new ResponseEntity<Courses>(courseservice.courseDetails(id), HttpStatus.OK);
+		}
+		return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+
+	@PostMapping("/add")
+	@ApiOperation("Adding a Course")
+	public ResponseEntity<String> add(@RequestBody Courses crs){
+		if(courseservice.addCourse(crs)!=null){
+			return  new ResponseEntity<String>("Course added successfully", HttpStatus.OK);
+		}
+		return  new ResponseEntity<>("Course was already added", HttpStatus.ALREADY_REPORTED);
+	}
+
+	@PutMapping("/edit/{id}")
+	@ApiOperation("Editing a Course")
+	public ResponseEntity<Courses> editCourse(@PathVariable("id") int id, @RequestBody Courses crs){
+		if(courseservice.courseDetails(id)!=null){
+			Courses crsdt = courseservice.courseDetails(id);
+			crsdt.setTitle(crs.getTitle());
+			crsdt.setCourse_desc(crs.getCourse_desc());
+			crsdt.setInstituteid(crs.getInstituteid());
+			crsdt.setInstitute_name(crs.getInstitute_name());
+			return new ResponseEntity<Courses>(courseservice.saveCourse(crsdt),HttpStatus.OK);
+		}
+		return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+
+	@DeleteMapping("/delete/{id}")
+	@Transactional
+	@ApiOperation("Delete a course")
+	public ResponseEntity<String> deleteCourse(@PathVariable("id") int id){
+		if(courseservice.courseDetails(id)!=null){
+			if(courseservice.deletebyId(id)>0){
+				return  new ResponseEntity<String>("Course Deleted Successfully", HttpStatus.OK);
+			}
+		}
+		return  new ResponseEntity<>("Course not able to delete", HttpStatus.NOT_FOUND);
+	}
+
 	
 	@PostMapping("/enroll")
 	@ApiOperation("Enroll into a new course")
@@ -73,7 +120,7 @@ public class CourseController {
 		return new ResponseEntity<>(enrolled,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/deletecourse")
+	@DeleteMapping("/deleteenrolled")
 	@Transactional
 	@ApiOperation("Delete enrolled courses")
 	public ResponseEntity<String> deleteCourse(@RequestParam(required = true) int userid, @RequestParam(required = true) int courseid){
