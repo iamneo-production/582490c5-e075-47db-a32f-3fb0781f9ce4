@@ -19,4 +19,13 @@ public interface CourseService {
 	
 	public int deleteenrolled(int courseid, int userid);
 
+	public Courses addCourse(Courses crs);
+
+	public Courses courseDetails(int id);
+
+	public Courses saveCourse(Courses crs);
+
+	public int deletebyId(int courseid);
+
+
 }

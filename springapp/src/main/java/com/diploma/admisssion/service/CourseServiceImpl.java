@@ -54,4 +54,40 @@ public class CourseServiceImpl implements CourseService {
 		return crgrepo.deleteByCourseidAndUserid(courseid, userid);
 	}
 
+	@Override
+	public Courses addCourse(Courses crs) {
+		if(CourseAlreadyExits(crs.getTitle(), crs.getInstituteid()))
+		{
+			return null;
+		}
+		return courserepo.save(crs);
+	}
+
+	private boolean CourseAlreadyExits(String title, int instituteid){
+		if(courserepo.findByTitleAndInstituteid(title, instituteid)!=null){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public Courses courseDetails(int id) {
+		if(courserepo.findByCourseid(id)!=null){
+			return courserepo.findByCourseid(id);
+		}
+		return null;
+	}
+
+	@Override
+	public Courses saveCourse(Courses crs) {
+		return courserepo.save(crs);
+	}
+
+	@Override
+	public int deletebyId(int courseid) {
+		return courserepo.deleteByCourseid(courseid);
+	}
+
+	
+
 }
