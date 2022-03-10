@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import CoursesDataService from "../CourseService-User/CoursesService-User";
-import InstituteDataService from "../Institute-Service/InstituteService-User";
 import { Link } from "react-router-dom";
 
+
+
+
 export default class CoursesList extends Component{
+
     constructor(props) {
         super(props);
         this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
@@ -32,13 +35,13 @@ export default class CoursesList extends Component{
         });
       }
 
+
       retrieveCourses() {
         CoursesDataService.getAll()
           .then(response => {
             this.setState({
                 courses: response.data
             });
-            console.log(response.data);
           })
           .catch(e => {
             console.log(e);
@@ -78,9 +81,11 @@ export default class CoursesList extends Component{
           });
       }
 
+      
+
       render() {
 
-        const { searchTitle, courses, currentCourse, currentIndex } = this.state;
+        const { searchTitle, courses, currentCourse, currentIndex, InstituteName} = this.state;
         return (
             <div className="list row">
                 <div className="col-md-8">
@@ -109,15 +114,15 @@ export default class CoursesList extends Component{
                     <ul className="list-group list-group-numbered">
                         {courses &&
                             courses.map((course, index) => (
-                                <li
-                                    className={
+                                <li  
+                                  className={
                                         "list-group-item"+
                                         (index===currentIndex ? " active" : "")
                                     }
                                     onClick={() => this.setActiveCourse(course, index)}
                                     key={index}
                                 >
-                                    {course.title} -  Indian Institute of Technology
+                                    {course.title} - {course.institute_name}
                                 </li>
                             ))}
                     </ul>
@@ -137,6 +142,12 @@ export default class CoursesList extends Component{
                                     <strong>Description:</strong>
                                 </label>{" "}
                                 {currentCourse.course_desc}
+                            </div>
+                            <div class="p-3 mb-2 bg-success text-white">
+                                <label>
+                                    <strong>Offered by:</strong>
+                                </label>{" "}
+                                {currentCourse.institute_name}
                             </div>
                         </div>
                     ):(

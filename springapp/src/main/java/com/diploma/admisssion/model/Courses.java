@@ -1,6 +1,5 @@
 package com.diploma.admisssion.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,9 +13,10 @@ public class Courses {
 	private int course_id;
 	private String title;
 	private String course_desc;
-	@Column(unique = true)
 	private int institute_id;
+	private String institute_name;
 	
+
 	public Courses() {
 		
 	}
@@ -51,6 +51,14 @@ public class Courses {
 
 	public void setInstitute_id(int institute_id) {
 		this.institute_id = institute_id;
+	}
+
+	public String getInstitute_name() {
+		return institute_name;
+	}
+
+	public void setInstitute_name(String institute_name) {
+		this.institute_name = institute_name;
 	}
 	
 	
