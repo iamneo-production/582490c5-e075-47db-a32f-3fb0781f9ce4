@@ -50,8 +50,8 @@ public class UserContoller {
 	
 	@GetMapping("/getAll")
 	@ApiOperation("Fetch all the records of users")
-	public List<User> list(){
-        return userservice.getAllUsers();
+	public ResponseEntity<List<User>> list(){
+        return new ResponseEntity<List<User>>(userservice.getAllUsers(),HttpStatus.OK);
     }
 	
 

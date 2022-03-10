@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public User saveUser(User user) {
-		// TODO Auto-generated method stub
 		if(checkIfUserExist(user.getEmail()))
 		{
 			return null;
@@ -32,7 +31,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
 		return userRepo.findAll();
 	}
 	
