@@ -145,7 +145,7 @@ export default class CoursesList extends Component{
                             </div>
                             <div class="p-3 mb-2 bg-success text-white">
                                 <label>
-                                    <strong>Offered by InstituteName:</strong>
+                                    <strong>Offered by:</strong>
                                 </label>{" "}
                                 {currentCourse.institute_name}
                             </div>
