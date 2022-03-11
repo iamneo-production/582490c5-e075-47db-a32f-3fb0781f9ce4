@@ -27,5 +27,7 @@ public interface CourseService {
 
 	public int deletebyId(int courseid);
 
+	public void deleteAll();
+
 
 }
