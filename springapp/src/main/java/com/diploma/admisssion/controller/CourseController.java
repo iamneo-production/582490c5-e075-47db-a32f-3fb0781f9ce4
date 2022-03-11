@@ -96,6 +96,14 @@ public class CourseController {
 		return  new ResponseEntity<>("Course not able to delete", HttpStatus.NOT_FOUND);
 	}
 
+	@DeleteMapping("/deleteAll")
+	@Transactional
+	@ApiOperation("Delete all courses")
+	public ResponseEntity<HttpStatus> deleteAllCourse(){
+		courseservice.deleteAll();
+		return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
 	
 	@PostMapping("/enroll")
 	@ApiOperation("Enroll into a new course")

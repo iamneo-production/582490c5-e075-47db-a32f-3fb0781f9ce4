@@ -88,6 +88,11 @@ public class CourseServiceImpl implements CourseService {
 		return courserepo.deleteByCourseid(courseid);
 	}
 
+	@Override
+	public void deleteAll() {
+		courserepo.deleteAll();
+	}
+
 	
 
 }
