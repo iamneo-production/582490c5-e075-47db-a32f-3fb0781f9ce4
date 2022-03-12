@@ -11,13 +11,13 @@ public interface CourseService {
 	
 	public List<Courses> getCoursebyTitle(String title);
 	
-	public boolean CheckifAlreadyEnrolled(String useremail, int courseid);
+	public boolean CheckifAlreadyEnrolled(String useremail, String title);
 	
 	public CourseRegistration enrollCourse(CourseRegistration crg);
 	
-	public List<CourseRegistration> viewenrolled(int userid);
+	public List<CourseRegistration> viewenrolled(String email);
 	
-	public int deleteenrolled(int courseid, int userid);
+	public int deleteenrolled(int regid, String useremail);
 
 	public Courses addCourse(Courses crs);
 

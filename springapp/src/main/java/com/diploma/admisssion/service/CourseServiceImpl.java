@@ -31,13 +31,13 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public boolean CheckifAlreadyEnrolled(String useremail, int courseid) {
-		return crgrepo.findByUseremailAndCourseid(useremail, courseid)!=null ? true:false;
+	public boolean CheckifAlreadyEnrolled(String useremail, String title) {
+		return crgrepo.findByUseremailAndTitle(useremail, title)!=null ? true:false;
 	}
 
 	@Override
 	public CourseRegistration enrollCourse(CourseRegistration crg) {
-		if(CheckifAlreadyEnrolled(crg.getUseremail(),crg.getCourse_id()))
+		if(CheckifAlreadyEnrolled(crg.getUseremail(),crg.getTitle()))
 		{
 			return null;
 		}
@@ -45,13 +45,13 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public List<CourseRegistration> viewenrolled(int userid) {
-		return crgrepo.findByUserid(userid);
+	public List<CourseRegistration> viewenrolled(String email) {
+		return crgrepo.findByUseremail(email);
 	}
 
 	@Override
-	public int deleteenrolled(int courseid, int userid) {
-		return crgrepo.deleteByCourseidAndUserid(courseid, userid);
+	public int deleteenrolled(int regid, String useremail) {
+		return crgrepo.deleteByRegidAndUseremail(regid, useremail);
 	}
 
 	@Override
