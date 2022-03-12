@@ -10,10 +10,10 @@ import com.diploma.admisssion.model.CourseRegistration;
 @Repository
 public interface CourseRegistrationRepo extends JpaRepository<CourseRegistration, Integer>{
 
-	CourseRegistration findByUseremailAndCourseid(String useremail, int courseid);
+	CourseRegistration findByUseremailAndTitle(String useremail, String title);
 	
-	List<CourseRegistration> findByUserid(int userid);
+	List<CourseRegistration> findByUseremail(String useremail);
 	
-	int deleteByCourseidAndUserid(int courseid, int userid);
+	int deleteByRegidAndUseremail(int regid, String useremail);
 
 }

@@ -10,33 +10,27 @@ public class CourseRegistration {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int reg_id;
-	private int userid;
+	private int regid;
 	private String useremail;
 	private int HSCmarks;
-	private int courseid;
+	private String coursedesc;
 	private String title;
-	private int institute_id;
+	private String instituteName;
 	
 	public CourseRegistration() {
 		
 	}
 
-	public int getReg_id() {
-		return reg_id;
+	public int getRegid() {
+		return regid;
 	}
 
-	public void setReg_id(int reg_id) {
-		this.reg_id = reg_id;
+
+
+	public void setRegid(int regid) {
+		this.regid = regid;
 	}
 
-	public int getUser_id() {
-		return userid;
-	}
-
-	public void setUser_id(int userid) {
-		this.userid = userid;
-	}
 
 	public String getUseremail() {
 		return useremail;
@@ -54,13 +48,6 @@ public class CourseRegistration {
 		HSCmarks = hSCmarks;
 	}
 
-	public int getCourse_id() {
-		return courseid;
-	}
-
-	public void setCourse_id(int courseid) {
-		this.courseid = courseid;
-	}
 
 	public String getTitle() {
 		return title;
@@ -70,13 +57,23 @@ public class CourseRegistration {
 		this.title = title;
 	}
 
-	public int getInstitute_id() {
-		return institute_id;
+	public String getCoursedesc() {
+		return coursedesc;
 	}
 
-	public void setInstitute_id(int institute_id) {
-		this.institute_id = institute_id;
+	public void setCoursedesc(String coursedesc) {
+		this.coursedesc = coursedesc;
 	}
+
+	public String getInstituteName() {
+		return instituteName;
+	}
+
+	public void setInstituteName(String instituteName) {
+		this.instituteName = instituteName;
+	}
+
+
 	
 	
 	

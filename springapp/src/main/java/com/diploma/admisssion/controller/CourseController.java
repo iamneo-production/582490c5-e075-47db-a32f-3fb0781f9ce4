@@ -117,10 +117,10 @@ public class CourseController {
 	
 	@GetMapping("/viewenrolled")
 	@ApiOperation("View enrolled courses")
-	public ResponseEntity<List<CourseRegistration>> viewenrolled(@RequestParam(required = true) int userid){
+	public ResponseEntity<List<CourseRegistration>> viewenrolled(@RequestParam(required = true)String useremail){
 		
 		List<CourseRegistration> enrolled = new ArrayList<CourseRegistration>();
-		enrolled = courseservice.viewenrolled(userid);
+		enrolled = courseservice.viewenrolled(useremail);
 		if(enrolled.isEmpty())
 		{
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -131,8 +131,8 @@ public class CourseController {
 	@DeleteMapping("/deleteenrolled")
 	@Transactional
 	@ApiOperation("Delete enrolled courses")
-	public ResponseEntity<String> deleteCourse(@RequestParam(required = true) int userid, @RequestParam(required = true) int courseid){
-		if(courseservice.deleteenrolled(courseid,userid)>0)
+	public ResponseEntity<String> deleteCourse(@RequestParam(required = true) int regid, @RequestParam(required = true) String useremail){
+		if(courseservice.deleteenrolled(regid,useremail)>0)
 		{
 			return new ResponseEntity<>("Course Unenrolled Successfully", HttpStatus.OK);
 		}

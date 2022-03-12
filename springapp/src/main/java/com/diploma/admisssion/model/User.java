@@ -11,7 +11,7 @@ public class User {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int user_id;
+	private int userid;
 	private String user_type;
 	@Column(unique = true)
 	private String email;
@@ -33,13 +33,6 @@ public class User {
 		this.confirmpwd = confirmpwd;
 	}
 	
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
 	
 	public String getUser_type() {
 		return user_type;
@@ -72,6 +65,13 @@ public class User {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 	
 	
