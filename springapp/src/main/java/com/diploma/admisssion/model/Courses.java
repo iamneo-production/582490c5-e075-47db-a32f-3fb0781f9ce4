@@ -15,6 +15,24 @@ public class Courses {
 	private String course_desc;
 	private int instituteid;
 	private String institute_name;
+	private String academicYear;
+	private String courseDuration;
+
+	public String getAcademicYear() {
+		return academicYear;
+	}
+
+	public void setAcademicYear(String academicYear) {
+		this.academicYear = academicYear;
+	}
+
+	public String getCourseDuration() {
+		return courseDuration;
+	}
+
+	public void setCourseDuration(String courseDuration) {
+		this.courseDuration = courseDuration;
+	}
 	
 
 	public Courses() {

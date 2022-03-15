@@ -93,6 +93,14 @@ public class CourseServiceImpl implements CourseService {
 		courserepo.deleteAll();
 	}
 
+	@Override
+	public CourseRegistration courseRegistrationDetails(String useremail, String title) {
+		if(crgrepo.findByUseremailAndTitle(useremail, title)!=null){
+			return crgrepo.findByUseremailAndTitle(useremail, title);
+		}
+		return null;
+	}
+
 	
 
 }
