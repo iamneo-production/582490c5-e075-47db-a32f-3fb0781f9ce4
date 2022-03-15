@@ -13,6 +13,9 @@ public interface CourseRegistrationRepo extends JpaRepository<CourseRegistration
 	CourseRegistration findByUseremailAndTitle(String useremail, String title);
 	
 	List<CourseRegistration> findByUseremail(String useremail);
+
+	CourseRegistration findByRegid(int regid);
+
 	
 	int deleteByRegidAndUseremail(int regid, String useremail);
 

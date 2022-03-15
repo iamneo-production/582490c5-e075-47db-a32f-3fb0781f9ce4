@@ -14,6 +14,9 @@ public interface CourseService {
 	public boolean CheckifAlreadyEnrolled(String useremail, String title);
 	
 	public CourseRegistration enrollCourse(CourseRegistration crg);
+
+	
+	public CourseRegistration courseRegistrationDetails(String useremail, String title);
 	
 	public List<CourseRegistration> viewenrolled(String email);
 	

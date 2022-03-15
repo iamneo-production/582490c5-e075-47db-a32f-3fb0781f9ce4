@@ -1,17 +1,15 @@
 import React from 'react';
 import Navbar from './User Components/Navbar'
+import { EnrolledContainer } from '../../components/Styles';
 const CourseEnrolled = () => {
-return (
-	<div>
-	<Navbar />
-	<div className="row">
-			<div className="banner">
-				<img src="./images/rr6.jpg" alt="" className="srs" />
-				 {<h2 className="heading">NO COURSES ENROLLED</h2>} 
+	return (
+		<div>
+		<Navbar />
+		<EnrolledContainer>
+		<h1 style={{color:"#fff",fontSize:"60px",fontFamily:"Dosis"}}>No Courses Enrolled</h1>
+		</EnrolledContainer>
 		</div>
-	</div>
-	</div>
-);
-};
+	);
+	};
 
 export default CourseEnrolled;

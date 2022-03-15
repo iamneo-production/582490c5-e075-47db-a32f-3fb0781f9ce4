@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import CoursesDataService from "../CourseService-User/CoursesService-User";
-import { Link } from "react-router-dom";
+import {StyledButton} from './../../../components/Styles'
 
 
 
@@ -85,7 +85,7 @@ export default class CoursesList extends Component{
 
       render() {
 
-        const { searchTitle, courses, currentCourse, currentIndex, InstituteName} = this.state;
+        const { searchTitle, courses, currentCourse, currentIndex} = this.state;
         return (
             <div className="list row">
                 <div className="col-md-8">
@@ -149,6 +149,19 @@ export default class CoursesList extends Component{
                                 </label>{" "}
                                 {currentCourse.institute_name}
                             </div>
+                            <div class="p-3 mb-2 bg-success text-white">
+                                <label>
+                                    <strong>Course Duration:</strong>
+                                </label>{" "}
+                                {currentCourse.courseDuration}
+                            </div>
+                            <div class="p-3 mb-2 bg-success text-white">
+                                <label>
+                                    <strong>Academic Year:</strong>
+                                </label>{" "}
+                                {currentCourse.academicYear}
+                            </div>
+                               <StyledButton to={"/enroll/" + currentCourse.courseid}>Enroll</StyledButton>
                         </div>
                     ):(
                         <div class="p-3 mb-2 bg-warning text-dark">

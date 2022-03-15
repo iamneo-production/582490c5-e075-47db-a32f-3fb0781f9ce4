@@ -25,7 +25,7 @@ import Userprofile from './pages/User Pages/Userprofile';
 
 
 
-
+import CourseEnroll from './pages/User Pages/enroll-course';
 import {StyledContainer} from './components/Styles';
 import {
   BrowserRouter as Router,
@@ -34,7 +34,6 @@ import {
 } from 'react-router-dom';
 //Loader css
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
 
 function App() {
   return (
@@ -64,7 +63,8 @@ function App() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-
+          
+          <Route path="/enroll/:id" component={CourseEnroll} />
           <Route path="/admin" component={()=> <Admin authorized={authorized}/>}/>
 
           <Route path='/adminprofile' component={AdminProfile}/>
