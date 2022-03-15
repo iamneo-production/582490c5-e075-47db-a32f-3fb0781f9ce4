@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import background from './../assets/bg.jpg';
 
 import couresbg from './../assets/rr8.jpg'
+import enrollcoursebg from './../assets/rr6.jpg'
 
 import {Link} from 'react-router-dom';
 import background1 from './../assets/adminpage1.jpg'
@@ -180,6 +181,7 @@ export const ExtraText = styled.p`
 //TextLink
 export const TextLink = styled(Link)`
     text-decoration: none;
+    font-size: ${(props) => props.size}px;
     color: ${colors.theme};
     transition: ease-in-out 0.3s;
 
@@ -250,6 +252,7 @@ export const CoursesContainer = styled.div`
     background-size: cover;
     background-attachment: fixed;
 `;
+
 export const EnrolledContainer = styled.div`
     margin: 0;
     min-height: 100vh;

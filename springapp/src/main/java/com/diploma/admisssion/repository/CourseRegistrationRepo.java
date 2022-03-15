@@ -11,7 +11,7 @@ import com.diploma.admisssion.model.CourseRegistration;
 public interface CourseRegistrationRepo extends JpaRepository<CourseRegistration, Integer>{
 
 	CourseRegistration findByUseremailAndTitle(String useremail, String title);
-	
+
 	List<CourseRegistration> findByUseremail(String useremail);
 
 	CourseRegistration findByRegid(int regid);

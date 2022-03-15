@@ -14,6 +14,10 @@ class CoursesDataService{
       }
 
 
+      getbyID(id){
+        return http.get(`/getbyId?id=${id}`);
+      }
+
       enroll(data) {
         return http.post("/enroll", data);
       }
