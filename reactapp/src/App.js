@@ -26,7 +26,7 @@ import CourseEnroll from './pages/User Pages/enroll-course';
 
 
 
-
+import CourseEnroll from './pages/User Pages/enroll-course';
 import {StyledContainer} from './components/Styles';
 import {
   BrowserRouter as Router,
@@ -35,7 +35,6 @@ import {
 } from 'react-router-dom';
 //Loader css
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
 
 function App() {
   return (

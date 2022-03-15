@@ -6,7 +6,8 @@ import couresbg from './../assets/rr8.jpg'
 import enrollcoursebg from './../assets/rr6.jpg'
 
 import {Link} from 'react-router-dom';
-
+import background1 from './../assets/adminpage1.jpg'
+import enrollcoursebg from './../assets/rr6.jpg'
 export const colors = {
     primary: "#fff",
     theme: "#BE185D",
@@ -28,7 +29,24 @@ export const StyledContainer = styled.div`
     background-size: cover;
     background-attachment: fixed;
 `;
-
+export const StyledContainer1 = styled.div`
+    margin: 0;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background1});
+    background-size: cover;
+    background-attachment: fixed;
+`;
+export const StyledContainer2 = styled.div`
+    margin: 0;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background});
+    background-size: cover;
+    background-attachment: fixed;
+`;
 //Heading
 export const StyledTitle = styled.h2`
     font-size: ${(props) => props.size}px;
