@@ -51,6 +51,7 @@ export default class CourseEnroll extends Component{
       enrollCourse(){
         var email = emailadd
         var data = {
+            academicYear: this.state.currentCourse.academicYear,
             coursedesc: this.state.currentCourse.course_desc,
             hscmarks: this.state.HSCMarks,
             instituteName: this.state.currentCourse.institute_name,
@@ -60,18 +61,18 @@ export default class CourseEnroll extends Component{
           CoursesServiceUser.enroll(data)
           .then(response => {
             console.log(response.data);
-            if(response.data==="Course enrolled successfully"){
-              this.setState({
-                enrolled: true,
-                alreadyenrolled: false
-              })
-            }
-            else{
-              this.setState({
-                enrolled: true,
-                alreadyenrolled: true
-              })
-            }
+              if(response.status===200){
+                this.setState({
+                  enrolled: true,
+                  alreadyenrolled: false
+                })
+              }
+              else{
+                this.setState({
+                  enrolled: true,
+                  alreadyenrolled: true
+                })
+              }
           })
           .catch(e => {
             console.log(e);

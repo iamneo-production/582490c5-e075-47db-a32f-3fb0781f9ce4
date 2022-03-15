@@ -107,12 +107,17 @@ public class CourseController {
 	
 	@PostMapping("/enroll")
 	@ApiOperation("Enroll into a new course")
-	public ResponseEntity<String> enroll(@RequestBody CourseRegistration crg) {
+	public ResponseEntity<CourseRegistration> enroll(@RequestBody CourseRegistration crg) {
 		if(courseservice.enrollCourse(crg)!=null)
 		{
-			return new ResponseEntity<String>("Course enrolled successfully",HttpStatus.OK);
+			courseservice.enrollCourse(crg);
+			if(courseservice.courseRegistrationDetails(crg.getUseremail(), crg.getTitle())!=null){
+				CourseRegistration crgs = courseservice.courseRegistrationDetails(crg.getUseremail(), crg.getTitle());
+				return new ResponseEntity<CourseRegistration>(crgs,HttpStatus.OK);
+			}
+			return new ResponseEntity<CourseRegistration>(HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<String>("Course already enrolled",HttpStatus.IM_USED);
+		return new ResponseEntity<CourseRegistration>(HttpStatus.IM_USED);
 	}
 	
 	@GetMapping("/viewenrolled")
