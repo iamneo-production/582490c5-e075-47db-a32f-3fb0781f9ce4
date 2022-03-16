@@ -51,7 +51,7 @@ export default class EnrolledCoursesList extends Component{
                 <h2 className="text-white text-center">Enrolled Courses</h2>
                 <br></br>
                 <div className = "row-md-6">
-                       <table className = "table table-striped table-dark table-bordered table-hover">
+                       <table className = "table table-striped table-light table-bordered table-hover">
 
                            <thead className="text-center">
                                <tr>

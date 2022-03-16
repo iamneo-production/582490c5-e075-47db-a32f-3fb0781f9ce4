@@ -137,25 +137,25 @@ export default class CoursesList extends Component{
                                 </label>{" "}
                                 {currentCourse.title}
                             </div>
-                            <div class="p-3 mb-2 bg-success text-white">
+                            <div class="p-3 mb-2 bg-light text-dark">
                                 <label>
                                     <strong>Description:</strong>
                                 </label>{" "}
                                 {currentCourse.course_desc}
                             </div>
-                            <div class="p-3 mb-2 bg-success text-white">
+                            <div class="p-3 mb-2 bg-warning text-dark">
                                 <label>
                                     <strong>Offered by:</strong>
                                 </label>{" "}
                                 {currentCourse.institute_name}
                             </div>
-                            <div class="p-3 mb-2 bg-success text-white">
+                            <div class="p-3 mb-2 bg-primary text-white">
                                 <label>
                                     <strong>Course Duration:</strong>
                                 </label>{" "}
                                 {currentCourse.courseDuration}
                             </div>
-                            <div class="p-3 mb-2 bg-success text-white">
+                            <div class="p-3 mb-2 bg-danger text-white">
                                 <label>
                                     <strong>Academic Year:</strong>
                                 </label>{" "}
