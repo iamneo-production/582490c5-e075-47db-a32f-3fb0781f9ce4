@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import CoursesServiceUser from "./CourseService-User/CoursesService-User";
 import {emailadd} from './../Login'
-import {Link, useHistory} from 'react-router-dom'
-import {TextLink, StyledFormArea, StyledTitle, CoursesContainer, colors, EnrolledContainer} from './../../components/Styles'
+import {TextLink, StyledFormArea, StyledTitle, colors, EnrolledContainer} from './../../components/Styles'
 
 export default class CourseUnenroll extends Component{
 

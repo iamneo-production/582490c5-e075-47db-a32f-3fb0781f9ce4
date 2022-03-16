@@ -1,4 +1,4 @@
-import { StyledTitle, StyledSubTitle, Avatar, StyledButton, ButtonGroup, StyledFormArea, colors} from "../components/Styles";
+import { StyledTitle, Avatar, StyledButton, ButtonGroup, StyledFormArea, colors} from "../components/Styles";
 import RambosLogo from './../assets/RambosLogo.jpg';
 
 const Dashboard = () => {

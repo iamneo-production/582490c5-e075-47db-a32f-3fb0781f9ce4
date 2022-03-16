@@ -27,7 +27,6 @@ import CourseUnenroll from './pages/User Pages/course-unenroll';
 
 
 
-import {StyledContainer} from './components/Styles';
 import {
   BrowserRouter as Router,
   Switch,
