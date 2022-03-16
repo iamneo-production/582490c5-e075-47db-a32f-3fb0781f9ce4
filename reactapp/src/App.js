@@ -26,7 +26,6 @@ import CourseEnroll from './pages/User Pages/enroll-course';
 
 
 
-import CourseEnroll from './pages/User Pages/enroll-course';
 import {StyledContainer} from './components/Styles';
 import {
   BrowserRouter as Router,

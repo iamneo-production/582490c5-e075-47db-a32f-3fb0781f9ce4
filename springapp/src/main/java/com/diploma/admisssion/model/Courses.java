@@ -36,21 +36,7 @@ public class Courses {
 	}
 
 	
-	public String getAcademicYear() {
-		return academicYear;
-	}
-
-	public void setAcademicYear(String academicYear) {
-		this.academicYear = academicYear;
-	}
-
-	public String getCourseDuration() {
-		return courseDuration;
-	}
-
-	public void setCourseDuration(String courseDuration) {
-		this.courseDuration = courseDuration;
-	}
+	
 	public Courses() {
 		
 	}

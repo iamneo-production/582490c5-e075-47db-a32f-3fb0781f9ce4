@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import background from './../assets/bg.jpg';
 
 import couresbg from './../assets/rr8.jpg'
-import enrollcoursebg from './../assets/rr6.jpg'
+
 
 import {Link} from 'react-router-dom';
 import background1 from './../assets/adminpage1.jpg'
