@@ -23,6 +23,7 @@ import CourseEnrolled from './pages/User Pages/courseenrolled';
 import UserInstitute from './pages/User Pages/UserInstitute';
 import Userprofile from './pages/User Pages/Userprofile';
 import CourseEnroll from './pages/User Pages/enroll-course';
+import CourseUnenroll from './pages/User Pages/course-unenroll';
 
 
 
@@ -67,6 +68,8 @@ function App() {
           </Route>
 
           <Route path="/enroll/:id" component={CourseEnroll} />
+
+          <Route path="/unenroll/:id" component={CourseUnenroll} />
 
           <Route path="/admin" component={()=> <Admin authorized={authorized}/>}/>
 

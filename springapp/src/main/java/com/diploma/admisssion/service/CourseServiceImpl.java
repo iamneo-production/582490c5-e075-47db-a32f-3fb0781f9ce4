@@ -101,6 +101,14 @@ public class CourseServiceImpl implements CourseService {
 		return null;
 	}
 
+	@Override
+	public CourseRegistration courseRegistrationDetails(int regid) {
+		if(crgrepo.findByRegid(regid)!=null){
+			return crgrepo.findByRegid(regid);
+		}
+		return null;
+	}
+
 	
 
 }

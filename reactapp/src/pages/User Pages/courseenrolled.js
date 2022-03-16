@@ -1,13 +1,14 @@
 import React from 'react';
 import Navbar from './User Components/Navbar'
 import {EnrolledContainer} from './../../components/Styles'
+import EnrolledCoursesList from './User Components/CourseEnrolledList';
 
 const CourseEnrolled = () => {
 return (
 	<div>
 	<Navbar />
 	<EnrolledContainer>
-	<h1>No Courses Enrolled</h1>
+	<EnrolledCoursesList />
 	</EnrolledContainer>
 	</div>
 );

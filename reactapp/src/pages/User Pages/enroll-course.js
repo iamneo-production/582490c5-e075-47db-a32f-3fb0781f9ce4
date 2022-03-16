@@ -88,10 +88,15 @@ export default class CourseEnroll extends Component{
                   <CoursesContainer>
                   <div>
                       <StyledFormArea>
-                          <StyledTitle color={colors.theme} size={25}>
+                          <StyledTitle color={colors.red} size={25}>
+                              <strong>
                               You have already enrolled into the Course!
+                              </strong>
                           </StyledTitle>
-                          <StyledTitle color={colors.dark2} size={15}>
+                          <StyledTitle color={colors.dark2} size={20}>
+                              <TextLink to="/courseenrolled">View Enrolled Courses</TextLink>
+                          </StyledTitle>
+                          <StyledTitle color={colors.dark2} size={20}>
                               Enroll new Course ? <TextLink to="/usercourse">Click Here</TextLink>
                           </StyledTitle>
                       </StyledFormArea>
@@ -101,10 +106,15 @@ export default class CourseEnroll extends Component{
                   <CoursesContainer>
                   <div>
                       <StyledFormArea>
-                          <StyledTitle color={colors.theme} size={25}>
+                          <StyledTitle color={colors.green} size={25}>
+                          <strong>
                               You have enrolled into the Course Successfully!
+                          </strong>
                           </StyledTitle>
-                          <StyledTitle color={colors.dark2} size={15}>
+                          <StyledTitle color={colors.dark2} size={20}>
+                            <TextLink to="/courseenrolled">View Enrolled Courses</TextLink>
+                          </StyledTitle>
+                          <StyledTitle color={colors.dark2} size={20}>
                               Enroll another Course ? <TextLink to="/usercourse">Click Here</TextLink>
                           </StyledTitle>
                       </StyledFormArea>
@@ -112,7 +122,10 @@ export default class CourseEnroll extends Component{
                   </CoursesContainer>
                  )
               ) : (
-              <div className="w-100">
+              <div className="w-100 was-validated">
+                <StyledTitle  size={20} color={colors.light1}>
+                  <strong>Course Enrollment</strong>
+                </StyledTitle>
                 <div class="p-3 mb-2 bg-light text-dark">
                     <label htmlFor="title" className="text-success">
                       <strong>Title: </strong>
@@ -239,10 +252,17 @@ export default class CourseEnroll extends Component{
                     name="hscmarks"
                     required
                   />
+                  <div class="valid-feedback">
+                    Mark is valid!
+                  </div>
+                <div class="invalid-feedback">
+                    Mark is required!
+                </div>
             </div>
             <button type="submit" onClick={this.enrollCourse} className="btn btn-success">
               Enroll Now
             </button>
+
           </div>
               )}
           </CoursesContainer>
