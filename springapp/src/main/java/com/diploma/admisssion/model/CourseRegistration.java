@@ -26,14 +26,7 @@ public class CourseRegistration {
 	public void setAcademicYear(String academicYear){
 		this.academicYear=academicYear;
 	}
-=======
-	public String getAcademicYear() {
-		return academicYear;
-	}
 
-	public void setAcademicYear(String academicYear) {
-		this.academicYear = academicYear;
-	}
 
 
 	public CourseRegistration() {
