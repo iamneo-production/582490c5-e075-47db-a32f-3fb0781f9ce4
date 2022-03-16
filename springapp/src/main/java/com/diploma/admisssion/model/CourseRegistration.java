@@ -18,13 +18,16 @@ public class CourseRegistration {
 	private String instituteName;
 	private String academicYear;
 	
-	public String getAcademicYear() {
+
+	public String getAcademicYear(){
 		return academicYear;
 	}
 
-	public void setAcademicYear(String academicYear) {
-		this.academicYear = academicYear;
+	public void setAcademicYear(String academicYear){
+		this.academicYear=academicYear;
 	}
+
+
 
 	public CourseRegistration() {
 		

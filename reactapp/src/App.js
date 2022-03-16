@@ -27,7 +27,6 @@ import CourseUnenroll from './pages/User Pages/course-unenroll';
 
 
 
-
 import {StyledContainer} from './components/Styles';
 import {
   BrowserRouter as Router,
@@ -36,7 +35,6 @@ import {
 } from 'react-router-dom';
 //Loader css
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
 
 function App() {
   return (

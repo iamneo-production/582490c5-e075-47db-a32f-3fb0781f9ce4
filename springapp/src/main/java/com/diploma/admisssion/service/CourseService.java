@@ -15,6 +15,7 @@ public interface CourseService {
 	
 	public CourseRegistration enrollCourse(CourseRegistration crg);
 
+
 	public CourseRegistration courseRegistrationDetails(String useremail, String title);
 
 	public CourseRegistration courseRegistrationDetails(int regid);

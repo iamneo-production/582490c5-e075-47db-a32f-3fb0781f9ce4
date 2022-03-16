@@ -9,7 +9,6 @@ class CoursesDataService{
       findByTitle(title) {
         return http.get(`/getbyTitle?title=${title}`);
       }
-
       getbyID(id){
         return http.get(`/getbyId?id=${id}`);
       }

@@ -1,13 +1,14 @@
 import React from 'react';
 import Navbar from './Admin Components/Navbar';
 import { name, mobno, emailadd } from '../Login';
-import background from './../../assets/adminpage1.jpg'
-
+// import background from './../../assets/adminpage1.jpg'
+import { StyledContainer1 } from '../../components/Styles';
 const AdminProfile = () => {
 return (
+	<StyledContainer1>
 	<div style={{
-		backgroundImage: `url(${background})`,
-		backgroundColor: "transparent",
+		// backgroundImage: `url(${background})`,
+		// backgroundColor: "transparent",
 		height: '100vh'
 	}}>
 	<Navbar />
@@ -23,6 +24,7 @@ return (
         <h2 style={{color:"	#fff",fontFamily:"Dosis",fontSize:"35px"}}>Mobile: {mobno}</h2>
 	</span>
 	</div>
+	</StyledContainer1>
 );
 };
 
