@@ -17,8 +17,13 @@ const AddCourses=()=> {
     axios.post(`${base_url}/courses/add`,data).then(
       (response)=>{
           console.log(response);
+          if(response.status===200){
           // console.log("success");
-         toast.success("Course added successfully");
+          toast.success("Course added successfully");
+          }
+          else{
+            toast.warning("Course was already added");
+          }
           // setCourses({course_id:"",title:"",instituteid:"",course_desc:"",institute_name:""});
       },
       (error)=>{
@@ -32,51 +37,51 @@ const AddCourses=()=> {
       <Fragment>
       <h1 className='text-center my-3'>Add Course here</h1>
       <Form onSubmit={handleform}>
-          <FormGroup>
+          {/* <FormGroup>
           <Label for="userId" >Course id</Label>
           <Input type="text" name="userId" id="userId" placeholder="Enter course id here" 
           onChange={(e)=>{
             setCourses({...courses,courseid:e.target.value})
           }}/>
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup>
           <Label for="title" >Course title</Label>
-          <Input type="text" name="title" id="title" placeholder="Enter course title here"
+          <Input type="text" name="title" id="title" placeholder="Enter course title here" required
           onChange={(e)=>{
             setCourses({...courses,title:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
           <Label for="userId" >Institute id</Label>
-          <Input type="text" name="userId" id="userId" placeholder="Enter institute id here"
+          <Input type="text" name="userId" id="userId" placeholder="Enter institute id here" required
           onChange={(e)=>{
             setCourses({...courses,instituteid:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
           <Label for="description" >Course description</Label>
-          <Input type="textarea" name="description" id="description" placeholder="Enter description here"
+          <Input type="textarea" name="description" id="description" placeholder="Enter description here" required
           onChange={(e)=>{
             setCourses({...courses,course_desc:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
           <Label for="title" >Institute name</Label>
-          <Input type="text" name="title" id="title" placeholder="Enter institute name here"
+          <Input type="text" name="title" id="title" placeholder="Enter institute name here" required
           onChange={(e)=>{
             setCourses({...courses,institute_name:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
           <Label for="title" >Course duration</Label>
-          <Input type="text" name="title" id="title" placeholder="Enter course duration here"
+          <Input type="text" name="title" id="title" placeholder="Enter course duration here" required
           onChange={(e)=>{
             setCourses({...courses,courseDuration:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
           <Label for="title" >Academic year</Label>
-          <Input type="text" name="title" id="title" placeholder="Enter academic year"
+          <Input type="text" name="title" id="title" placeholder="Enter academic year" required
           onChange={(e)=>{
             setCourses({...courses,academicYear:e.target.value})
           }}/>
