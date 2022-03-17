@@ -1,4 +1,4 @@
-import {StyledFormArea, StyledTitle, colors, ExtraText, TextLink, StyledContainer} from './../components/Styles'
+import {StyledFormArea, StyledTitle, colors, TextLink, StyledContainer} from './../components/Styles'
 import React from 'react';
 
 const InvalidLogin = () => {

@@ -1,11 +1,11 @@
-import {StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel, Avatar, StyledTitle, colors, ButtonGroup, ExtraText, TextLink, CopyrightText, StyledContainer} from './../components/Styles'
+import {StyledFormArea, StyledFormButton, Avatar, StyledTitle, colors, ButtonGroup, ExtraText, TextLink, CopyrightText, StyledContainer} from './../components/Styles'
 import RambosLogo from './../assets/RambosLogo.jpg';
 import {Formik, Form} from 'formik';
 import {TextInput} from './../components/FormLib';
 import {FiMail, FiLock} from 'react-icons/fi';
 import * as Yup from 'yup';
 import {useHistory} from 'react-router-dom'
-import React, { useState } from 'react';
+import React from 'react';
 
 let name=""
 let mobno=""
@@ -15,7 +15,6 @@ let authorized=false
 
 const Login = () => {
     const history  = useHistory();
-    const [message, setMessage] = useState("");
     return(
         <StyledContainer>
         <div>

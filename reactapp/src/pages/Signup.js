@@ -5,14 +5,13 @@ import {TextInput} from './../components/FormLib';
 import {FiMail, FiLock, FiUser, FiSmartphone} from 'react-icons/fi';
 import * as Yup from 'yup';
 import "yup-phone";
-import React, { useState } from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom'
 
 
 
 const Signup = () => {   
     
-    const [message, setMessage] = useState("");
     const history  = useHistory();
     return(
         <StyledContainer>
@@ -50,7 +49,6 @@ const Signup = () => {
 
                             }).then((response)=>{
                                 response.text().then(d => {
-                                    setMessage(d)
                                     if(d==='User added successfully')
                                     {
                                         history.push('/useradded')

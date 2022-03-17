@@ -17,12 +17,16 @@ class CoursesDataService{
         return http.post("/enroll", data);
       }
 
-      viewEnrolled(userid){
-        return http.get(`/viewenrolled?userid=${userid}`);
+      viewEnrolled(useremail){
+        return http.get(`/viewenrolled?useremail=${useremail}`);
       }
 
-      deleteEnrolled(courseid, userid){
-        return http.delete(`/deletecourse?courseid=${courseid}&userid=${userid}`);
+      getEnrolled(regid){
+        return http.get(`/enrolledbyid?regid=${regid}`);
+      }
+
+      deleteEnrolled(regid, useremail){
+        return http.delete(`/deleteenrolled?regid=${regid}&useremail=${useremail}`);
       }
 
 

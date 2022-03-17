@@ -132,6 +132,17 @@ public class CourseController {
 		}
 		return new ResponseEntity<>(enrolled,HttpStatus.OK);
 	}
+
+	@GetMapping("/enrolledbyid")
+	@ApiOperation("View enrolled course by Registarion id")
+	public ResponseEntity<CourseRegistration> viewenrolledbyId(@RequestParam(required = true)int regid){
+		
+		CourseRegistration enrolledcourse = courseservice.courseRegistrationDetails(regid);
+		if(enrolledcourse!=null){
+			return new ResponseEntity<>(enrolledcourse,HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
 	
 	@DeleteMapping("/deleteenrolled")
 	@Transactional

@@ -16,7 +16,8 @@ export const colors = {
     dark1: "#1F2937",
     dark2: "#4B5563",
     dark3: "#9CA3AF",
-    red: "#DC2626"
+    red: "#DC2626",
+    green: "#008000"
 }
 
 export const StyledContainer = styled.div`
@@ -263,3 +264,25 @@ export const EnrolledContainer = styled.div`
     background-size: cover;
     background-attachment: fixed;
 `;
+
+export const UnEnrollButton = styled(Link)`
+    padding: 10px;
+    width: 50px;
+    background-color: transparent;
+    font-size: 15px;
+    border: 1px solid ${colors.primary};
+    border-radius: 10px;
+    color: ${colors.primary};
+    text-decoration: none;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        background-color: ${colors.theme};
+        color: ${colors.primary}
+        cursor: pointer;
+    }
+
+`;
+
+
