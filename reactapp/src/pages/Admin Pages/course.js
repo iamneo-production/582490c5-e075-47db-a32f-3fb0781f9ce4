@@ -18,7 +18,7 @@ import {
 	Link
   } from "react-router-dom";
 import { ToastContainer } from "react-bootstrap";
-import hello from "./hello";
+import Updatecourse from "./Updatecourse";
   
 
 const Course = () => {
@@ -51,6 +51,8 @@ const Course = () => {
 			  <Col md={8}>
 			  <Route path="/admincourse/add-course" component={AddCourses} exact/>
 			  <Route path="/admincourse/view-course" component={Allcourses} exact/>
+			  <Route path="/admincourse/view-course/update/:id" component={Updatecourse} exact/>
+
 			  </Col>
 		  </Row>
 	  </Container>
