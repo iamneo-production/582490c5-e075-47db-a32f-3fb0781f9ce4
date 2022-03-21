@@ -122,12 +122,12 @@ export default class CourseEnroll extends Component{
                   </CoursesContainer>
                  )
               ) : (
-              <div className="w-100 was-validated">
+              <div className="w-100 was-validated justify-content-center">
                 <StyledTitle  size={20} color={colors.light1}>
                   <strong>Course Enrollment</strong>
                 </StyledTitle>
                 <div class="p-3 mb-2 bg-light text-dark">
-                    <label htmlFor="title" className="text-success">
+                    <label htmlFor="title" className="text-success form-label">
                       <strong>Title: </strong>
                     </label>
                     <input
@@ -141,7 +141,7 @@ export default class CourseEnroll extends Component{
               </div>
 
               <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="description" className="text-success">
+                <label htmlFor="description" className="text-success form-label">
                   <strong>Description:</strong>
                 </label>
                   <input
@@ -155,7 +155,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="institute"  className="text-success">
+                <label htmlFor="institute"  className="text-success form-label">
                   <strong>Institute Name:</strong>
                 </label>
                   <input
@@ -169,7 +169,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="academicyear"  className="text-success">
+                <label htmlFor="academicyear"  className="text-success form-label">
                   <strong>Academic Year:</strong>
                 </label>
                   <input
@@ -183,7 +183,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="courseDuration"  className="text-success">
+                <label htmlFor="courseDuration"  className="text-success form-label">
                   <strong>Course Duration:</strong>
                 </label>
                   <input
@@ -197,7 +197,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="fname" className="text-success">
+                <label htmlFor="fname" className="text-success form-label">
                   <strong>Name:</strong>
                 </label>
                   <input
@@ -211,7 +211,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="email" className="text-success">
+                <label htmlFor="email" className="text-success form-label">
                   <strong>Email:</strong>
                 </label>
                   <input
@@ -225,7 +225,7 @@ export default class CourseEnroll extends Component{
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="mobile" className="text-success">
+                <label htmlFor="mobile" className="text-success form-label">
                   <strong>Mobile Number:</strong>
                 </label>
                   <input
@@ -240,22 +240,19 @@ export default class CourseEnroll extends Component{
 
 
             <div class="p-3 mb-2 bg-light text-dark">
-                <label htmlFor="hscmarks" className="text-success">
+                <label htmlFor="hscmarks" className="text-success form-label">
                   <strong>HSC/12th Marks:</strong>
                 </label>
                   <input
+                    required
                     type="text"
                     className="form-control"
                     id="hscmarks"
                     value={this.state.HSCMarks}
                     onChange={this.onChangeHSCMarks}
                     name="hscmarks"
-                    required
                   />
-                  <div class="valid-feedback">
-                    Mark is valid!
-                  </div>
-                <div class="invalid-feedback">
+                <div className="invalid-feedback">
                     Mark is required!
                 </div>
             </div>

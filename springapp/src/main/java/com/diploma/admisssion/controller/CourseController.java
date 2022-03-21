@@ -79,6 +79,8 @@ public class CourseController {
 			crsdt.setCourse_desc(crs.getCourse_desc());
 			crsdt.setInstituteid(crs.getInstituteid());
 			crsdt.setInstitute_name(crs.getInstitute_name());
+			crsdt.setAcademicYear(crs.getAcademicYear());
+			crsdt.setCourseDuration(crs.getCourseDuration());
 			return new ResponseEntity<Courses>(courseservice.saveCourse(crsdt),HttpStatus.OK);
 		}
 		return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);

@@ -25,6 +25,12 @@ public class User {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "User [confirmpwd=" + confirmpwd + ", email=" + email + ", mobno=" + mobno + ", name=" + name + ", pwd="
+				+ pwd + ", user_type=" + user_type + ", userid=" + userid + "]";
+	}
+
 	public String getConfirmpwd() {
 		return confirmpwd;
 	}

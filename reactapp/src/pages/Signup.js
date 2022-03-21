@@ -8,7 +8,7 @@ import "yup-phone";
 import React from 'react';
 import {useHistory} from 'react-router-dom'
 
-
+let errormsg=""
 
 const Signup = () => {   
     
@@ -47,17 +47,22 @@ const Signup = () => {
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify(fields)
 
-                            }).then((response)=>{
-                                response.text().then(d => {
-                                    if(d==='User added successfully')
-                                    {
+                            }).then((response) => {
+                               if(response.status===200){
+                                    response.json().then(d=>{
+                                        console.log(d)
                                         history.push('/useradded')
-                                    }
-                                    else
-                                    {
-                                        history.push('/usernotadded')
-                                    }
-                                })
+                                    })
+                               }
+                               else{
+                                   throw Error('User alreday registered with this e-mail: '+fields.email)
+                               } 
+                                
+                            })
+                            .catch(error => {
+                                console.log(error.message)
+                                errormsg = error.message
+                                history.push('/usernotadded')
                             })
                     }} 
                 >
@@ -130,4 +135,5 @@ const Signup = () => {
         </StyledContainer>
     )
 }
+export {errormsg};
 export default Signup;

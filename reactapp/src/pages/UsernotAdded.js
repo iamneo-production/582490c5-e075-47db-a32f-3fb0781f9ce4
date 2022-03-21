@@ -1,5 +1,6 @@
 import {StyledFormArea, StyledTitle, colors, ExtraText, TextLink, StyledContainer} from './../components/Styles'
 import React from 'react';
+import { errormsg } from './Signup';
 
 const UsernotAdded = () => {
     return(
@@ -7,7 +8,7 @@ const UsernotAdded = () => {
         <div>
             <StyledFormArea>
                 <StyledTitle color={colors.theme} size={30}>
-                    User Already Exists
+                    {errormsg}
                 </StyledTitle>
                 <ExtraText>
                     Please continue with <TextLink to="/login">Login</TextLink>
