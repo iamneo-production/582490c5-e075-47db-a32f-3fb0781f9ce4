@@ -21,6 +21,10 @@ public interface CourseService {
 	public CourseRegistration courseRegistrationDetails(int regid);
 	
 	public List<CourseRegistration> viewenrolled(String email);
+
+	public List<CourseRegistration> getCourseRegDetails(String title);
+
+	public CourseRegistration saveRegistration(CourseRegistration crgs);
 	
 	public int deleteenrolled(int regid, String useremail);
 

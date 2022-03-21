@@ -81,7 +81,18 @@ public class CourseController {
 			crsdt.setInstitute_name(crs.getInstitute_name());
 			crsdt.setAcademicYear(crs.getAcademicYear());
 			crsdt.setCourseDuration(crs.getCourseDuration());
-			return new ResponseEntity<Courses>(courseservice.saveCourse(crsdt),HttpStatus.OK);
+			Courses editted = courseservice.saveCourse(crsdt);
+
+			List<CourseRegistration> coursereg = courseservice.getCourseRegDetails(crsdt.getTitle());
+			for(CourseRegistration crgs:coursereg){
+				crgs.setTitle(crsdt.getTitle());
+				crgs.setAcademicYear(crsdt.getAcademicYear());
+				crgs.setCoursedesc(crsdt.getCourse_desc());
+				crgs.setInstituteName(crsdt.getInstitute_name());
+				courseservice.saveRegistration(crgs);
+			}
+
+			return new ResponseEntity<Courses>(editted,HttpStatus.OK);
 		}
 		return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
