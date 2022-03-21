@@ -114,6 +114,16 @@ public class CourseServiceImpl implements CourseService {
 		return crgrepo.deleteByTitle(title);
 	}
 
+	@Override
+	public List<CourseRegistration> getCourseRegDetails(String title) {
+		return crgrepo.findByTitle(title);
+	}
+
+	@Override
+	public CourseRegistration saveRegistration(CourseRegistration crgs) {
+		return crgrepo.save(crgs);
+	}
+
 	
 
 }
