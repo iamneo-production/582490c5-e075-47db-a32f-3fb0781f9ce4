@@ -91,9 +91,10 @@ public class CourseController {
 	@ApiOperation("Delete a course")
 	public ResponseEntity<String> deleteCourse(@PathVariable("id") int id){
 		if(courseservice.courseDetails(id)!=null){
-			if(courseservice.deletebyId(id)>0){
+				Courses crd = courseservice.courseDetails(id);
+				courseservice.deletefromCourseReg(crd.getTitle());
+				courseservice.deletebyId(id);
 				return  new ResponseEntity<String>("Course Deleted Successfully", HttpStatus.OK);
-			}
 		}
 		return  new ResponseEntity<>("Course not able to delete", HttpStatus.NOT_FOUND);
 	}

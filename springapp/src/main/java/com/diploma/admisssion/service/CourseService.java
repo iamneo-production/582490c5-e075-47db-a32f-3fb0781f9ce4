@@ -32,6 +32,8 @@ public interface CourseService {
 
 	public int deletebyId(int courseid);
 
+	public int deletefromCourseReg(String title);
+
 	public void deleteAll();
 
 
