@@ -15,7 +15,6 @@ import Course from './pages/Admin Pages/course';
 import Students from './pages/Admin Pages/students'
 import Institute from './pages/Admin Pages/institute';
 import AdminProfile from './pages/Admin Pages/AdminProfile';
-
 //User
 import User from './pages/User';
 import userCourse from './pages/User Pages/userCourse'
@@ -67,13 +66,13 @@ function App() {
           <Route path="/enroll/:id" component={CourseEnroll} />
 
           <Route path="/unenroll/:id" component={CourseUnenroll} />
-
           <Route path="/admin" component={()=> <Admin authorized={authorized}/>}/>
 
           <Route path='/adminprofile' component={AdminProfile}/>
 		      <Route path='/admininstitute' component={Institute} />
 		      <Route path='/admincourse' component={Course} />
 		      <Route path='/adminstudents' component={Students}/>
+          
 
           <Route path="/user" component={()=> <User authorized={authorized}/>}/>
 
