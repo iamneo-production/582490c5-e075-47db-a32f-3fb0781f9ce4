@@ -2,10 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Form, FormGroup, Input, Label, Container, Button } from 'reactstrap';
 import axios from 'axios';
 import base_url from '../../coursesapi';
-
+import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import hello from './hello';
-import { useParams } from 'react-router-dom';
 
 function Updatecourse(props) {
   const[courses,setCourses]=useState({});
@@ -18,6 +16,22 @@ function Updatecourse(props) {
     UpdateDatatoServer(courses);
     e.preventDefault();
   }
+
+  const getCourseInfo=()=>{
+    axios.get(`${base_url}/courses/getbyId?id=${props.match.params.id}`)
+    .then(response => {
+      console.log(response.data)
+      setCourses(response.data)
+      //console.log(courses.title)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
+  useEffect(()=>{
+    getCourseInfo();
+  },{})
   
   const UpdateDatatoServer=(data)=>{
     
@@ -49,6 +63,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="title" >Course title</Label>
           <Input type="text" name="title" id="title" placeholder="Enter course title here" required
+          value={courses.title}
           onChange={(e)=>{
             setCourses({...courses,title:e.target.value})
           }}/>
@@ -56,6 +71,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="description" >Course description</Label>
           <Input type="textarea" name="description" id="description" placeholder="Enter description here" required
+          value={courses.course_desc}
           onChange={(e)=>{
             setCourses({...courses,course_desc:e.target.value})
           }}/>
@@ -63,6 +79,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="userId" >Institute id</Label>
           <Input type="text" name="userId" id="userId" placeholder="Enter institute id here" required
+          value={courses.instituteid}
           onChange={(e)=>{
             setCourses({...courses,instituteid:e.target.value})
           }}/>
@@ -70,6 +87,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="title" >Institute name</Label>
           <Input type="text" name="title" id="title" placeholder="Enter institute name here" required
+          value={courses.institute_name}
           onChange={(e)=>{
             setCourses({...courses,institute_name:e.target.value})
           }}/>
@@ -77,6 +95,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="title" >Course duration</Label>
           <Input type="text" name="title" id="title" placeholder="Enter course duration here" required
+          value={courses.courseDuration}
           onChange={(e)=>{
             setCourses({...courses,courseDuration:e.target.value})
           }}/>
@@ -84,6 +103,7 @@ function Updatecourse(props) {
           <FormGroup>
           <Label for="title" >Academic year</Label>
           <Input type="text" name="title" id="title" placeholder="Enter academic year" required
+          value={courses.academicYear}
           onChange={(e)=>{
             setCourses({...courses,academicYear:e.target.value})
           }}/>

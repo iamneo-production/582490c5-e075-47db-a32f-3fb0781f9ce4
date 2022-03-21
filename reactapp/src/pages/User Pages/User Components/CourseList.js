@@ -19,7 +19,8 @@ export default class CoursesList extends Component{
           courses: [],
           currentCourse: null,
           currentIndex: -1,
-          searchTitle: ""
+          searchTitle: "",
+          coursesavailable: false
         };
       }
 
@@ -42,6 +43,17 @@ export default class CoursesList extends Component{
             this.setState({
                 courses: response.data
             });
+            var nocourses = this.state.courses.length
+            if(nocourses===0){
+              this.setState({
+                coursesavailable: false
+              })
+            }
+            else{
+              this.setState({
+                coursesavailable: true
+              })
+            }
           })
           .catch(e => {
             console.log(e);
@@ -87,90 +99,99 @@ export default class CoursesList extends Component{
 
         const { searchTitle, courses, currentCourse, currentIndex} = this.state;
         return (
-            <div className="list row">
-                <div className="col-md-8">
-                    <div className="input-group mb-3">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search by title"
-                        value={searchTitle}
-                        onChange={this.onChangeSearchTitle}
-                    />
-                    <div className="input-group-append">
-                        <button
-                            className="btn btn-primary"
-                            type="button"
-                            onClick={this.searchTitle}
-                        >
-                            Search
-                        </button>
-                    </div>
-                    </div>
-                </div>
-                <div className="col-lg-6">
-                    <h4 class="text-white bg-dark">Courses List</h4>
+          <div>
+            {this.state.coursesavailable ? (
+              <div className="list row">
+              <div className="col-md-8">
+                  <div className="input-group mb-3">
+                  <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search by title"
+                      value={searchTitle}
+                      onChange={this.onChangeSearchTitle}
+                  />
+                  <div className="input-group-append">
+                      <button
+                          className="btn btn-primary"
+                          type="button"
+                          onClick={this.searchTitle}
+                      >
+                          Search
+                      </button>
+                  </div>
+                  </div>
+              </div>
+              <div className="col-lg-6">
+                  <h4 class="text-white bg-dark">Courses List</h4>
 
-                    <ul className="list-group list-group-numbered">
-                        {courses &&
-                            courses.map((course, index) => (
-                                <li  
-                                  className={
-                                        "list-group-item"+
-                                        (index===currentIndex ? " active" : "")
-                                    }
-                                    onClick={() => this.setActiveCourse(course, index)}
-                                    key={index}
-                                >
-                                    {course.title} - {course.institute_name}
-                                </li>
-                            ))}
-                    </ul>
-                </div>
-                <div className="col-md-6">
-                    {currentCourse ? (
-                        <div>
-                            <h4 class="text-warning">Course</h4>
-                            <div class="p-3 mb-2 bg-success text-white">
-                                <label>
-                                    <strong>Title:</strong>
-                                </label>{" "}
-                                {currentCourse.title}
-                            </div>
-                            <div class="p-3 mb-2 bg-light text-dark">
-                                <label>
-                                    <strong>Description:</strong>
-                                </label>{" "}
-                                {currentCourse.course_desc}
-                            </div>
-                            <div class="p-3 mb-2 bg-warning text-dark">
-                                <label>
-                                    <strong>Offered by:</strong>
-                                </label>{" "}
-                                {currentCourse.institute_name}
-                            </div>
-                            <div class="p-3 mb-2 bg-primary text-white">
-                                <label>
-                                    <strong>Course Duration:</strong>
-                                </label>{" "}
-                                {currentCourse.courseDuration}
-                            </div>
-                            <div class="p-3 mb-2 bg-danger text-white">
-                                <label>
-                                    <strong>Academic Year:</strong>
-                                </label>{" "}
-                                {currentCourse.academicYear}
-                            </div>
-                               <StyledButton to={"/enroll/" + currentCourse.courseid}>Enroll</StyledButton>
-                        </div>
-                    ):(
-                        <div class="p-3 mb-2 bg-warning text-dark">
-                            <strong>Please click on a Course...</strong>
-                        </div>
-                    )}
-                </div>
-                
-            </div>
+                  <ul className="list-group list-group-numbered">
+                      {courses &&
+                          courses.map((course, index) => (
+                              <li  
+                                className={
+                                      "list-group-item"+
+                                      (index===currentIndex ? " active" : "")
+                                  }
+                                  onClick={() => this.setActiveCourse(course, index)}
+                                  key={index}
+                              >
+                                  {course.title} - {course.institute_name}
+                              </li>
+                          ))}
+                  </ul>
+              </div>
+              <div className="col-md-6">
+                  {currentCourse ? (
+                      <div>
+                          <h4 class="text-warning">Course</h4>
+                          <div class="p-3 mb-2 bg-success text-white">
+                              <label>
+                                  <strong>Title:</strong>
+                              </label>{" "}
+                              {currentCourse.title}
+                          </div>
+                          <div class="p-3 mb-2 bg-light text-dark">
+                              <label>
+                                  <strong>Description:</strong>
+                              </label>{" "}
+                              {currentCourse.course_desc}
+                          </div>
+                          <div class="p-3 mb-2 bg-warning text-dark">
+                              <label>
+                                  <strong>Offered by:</strong>
+                              </label>{" "}
+                              {currentCourse.institute_name}
+                          </div>
+                          <div class="p-3 mb-2 bg-primary text-white">
+                              <label>
+                                  <strong>Course Duration:</strong>
+                              </label>{" "}
+                              {currentCourse.courseDuration}
+                          </div>
+                          <div class="p-3 mb-2 bg-danger text-white">
+                              <label>
+                                  <strong>Academic Year:</strong>
+                              </label>{" "}
+                              {currentCourse.academicYear}
+                          </div>
+                             <StyledButton to={"/enroll/" + currentCourse.courseid}>Enroll</StyledButton>
+                      </div>
+                  ):(
+                      <div class="p-3 mb-2 bg-warning text-dark">
+                          <strong>Please click on a Course...</strong>
+                      </div>
+                  )}
+              </div>
+              
+          </div>
+            ): (
+              <div>
+                  <br></br>
+                  <h2 className="text-white text-center">No Courses Enrolled</h2> 
+              </div>
+            )}
+          </div>
 
         )
 
