@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Base64;
 
+import com.diploma.admisssion.exceptions.InvalidUserException;
+import com.diploma.admisssion.exceptions.UserAlreadyExistsException;
 import com.diploma.admisssion.model.User;
 import com.diploma.admisssion.repository.UserRepo;
 
@@ -18,15 +20,16 @@ public class UserServiceImpl implements UserService{
 	
 	
 	@Override
-	public User saveUser(User user) {
+	public User saveUser(User user) throws UserAlreadyExistsException{
 		if(checkIfUserExist(user.getEmail()))
 		{
-			return null;
+			throw new UserAlreadyExistsException(user.getEmail());
 		}
 		Base64.Encoder encoder = Base64.getEncoder();  
 		user.setPwd(encoder.encodeToString(user.getPwd().getBytes()));
 		user.setConfirmpwd(encoder.encodeToString(user.getConfirmpwd().getBytes()));
-		return userRepo.save(user);
+		userRepo.save(user);
+		return user;
 	}
 
 	@Override
@@ -40,36 +43,26 @@ public class UserServiceImpl implements UserService{
     }
 
 	@Override
-	public boolean isValid(String email, String password) {
-		Base64.Encoder encoder = Base64.getEncoder();
-		String pwd = encoder.encodeToString(password.getBytes());
-		if(validemailandpwd(email,pwd))
-		{
-			return true;
+	public User loginUser(User user) throws InvalidUserException {
+		if(isValidUser(user.getEmail(),user.getPwd())){
+			String email = user.getEmail();
+			Base64.Encoder encoder = Base64.getEncoder();
+			String pwd = encoder.encodeToString(user.getPwd().getBytes());
+			return userRepo.findByEmailAndPwd(email,pwd);
 		}
-		return false;
+		throw new InvalidUserException();
 	}
 
-	private boolean validemailandpwd(String email, String pwd) {
-		
-		if(userRepo.findByEmailAndPwd(email, pwd).size()!=0)
-		{
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public User UserDetails(String email, String password) {
+	private boolean isValidUser(String email, String password){
 		Base64.Encoder encoder = Base64.getEncoder();
 		String pwd = encoder.encodeToString(password.getBytes());
-		if(userRepo.findByEmailAndPwd(email, pwd).size()!=0)
-		{
-			return userRepo.findByEmailAndPwd(email, pwd).get(0);
-		}
-		return null;
+		return userRepo.findByEmailAndPwd(email, pwd) != null ? true:false;
+	}
+
+
 	
-	}
+
+	
 
 	
 

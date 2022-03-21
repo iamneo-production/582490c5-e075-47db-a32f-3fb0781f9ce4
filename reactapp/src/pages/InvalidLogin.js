@@ -1,5 +1,6 @@
 import {StyledFormArea, StyledTitle, colors, TextLink, StyledContainer} from './../components/Styles'
 import React from 'react';
+import { errormsg } from './Login';
 
 const InvalidLogin = () => {
     return(
@@ -7,7 +8,7 @@ const InvalidLogin = () => {
         <div>
             <StyledFormArea>
                 <StyledTitle color={colors.theme} size={25}>
-                    Invalid Username or Password
+                    {errormsg}
                 </StyledTitle>
                 <StyledTitle color={colors.dark2} size={15}>
                     New Member ? <TextLink to="/signup">Signup</TextLink>

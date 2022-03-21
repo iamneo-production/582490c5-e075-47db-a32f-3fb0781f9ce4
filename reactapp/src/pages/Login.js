@@ -11,6 +11,7 @@ let name=""
 let mobno=""
 let emailadd=""
 let authorized=false
+let errormsg=""
 
 
 const Login = () => {
@@ -36,19 +37,14 @@ const Login = () => {
                     }
                     onSubmit={(values) => {
                         console.log(JSON.stringify(values, null, 4));
-                        fetch("http://localhost:8080/user/loginuser",{
+                        fetch("http://localhost:8080/user/login",{
                             method:"POST",
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify(values)
 
                             }).then((response) => {
-                                if(response.status===400)
-                                {
-                                    history.push('/invalidlogin')
-                                }
-                                else
-                                {
-                                    response.json().then(d => {
+                                if(response.status===200){
+                                    response.json().then(d=>{
                                         if(d.user_type==="1")
                                         {
                                             authorized=true;
@@ -67,6 +63,15 @@ const Login = () => {
                                         }
                                     })
                                 }
+                                else
+                                {
+                                    throw Error('Invalid Login Credentials')
+                                }
+                            })
+                            .catch(error => {
+                                console.log(error.message)
+                                errormsg = error.message
+                                history.push('/invalidlogin')
                             })
                     }}
                 >
@@ -110,5 +115,5 @@ const Login = () => {
         </StyledContainer>
     )
 }
-export {authorized, name, mobno, emailadd};
+export {authorized, name, mobno, emailadd, errormsg};
 export default Login;

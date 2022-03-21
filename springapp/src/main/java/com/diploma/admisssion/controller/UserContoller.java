@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.diploma.admisssion.exceptions.InvalidUserException;
+import com.diploma.admisssion.exceptions.UserAlreadyExistsException;
 import com.diploma.admisssion.model.User;
 import com.diploma.admisssion.service.UserService;
 
@@ -14,6 +16,8 @@ import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,31 +26,31 @@ import org.springframework.http.ResponseEntity;
 @RequestMapping("/user")
 @CrossOrigin
 public class UserContoller {
+
+	Logger logger = LoggerFactory.getLogger(UserContoller.class);
+
 	@Autowired
 	private UserService userservice;
 	
 	@PostMapping("/add")
 	@ApiOperation("Add users to the Portal")
-	public String add(@RequestBody User user) {
-		if(userservice.saveUser(user)!=null)
-		{
-			return "User added successfully";
-		}
-		return "User already exits";
+	public ResponseEntity<User> add(@RequestBody User user) throws UserAlreadyExistsException{
+		User uresp = userservice.saveUser(user);
+		logger.info(uresp.toString());
+		return new ResponseEntity<User>(uresp,HttpStatus.OK);
+
+	}
+
+	@PostMapping("/login")
+	@ApiOperation("Login users the Portal")
+	public ResponseEntity<User> login(@RequestBody User user) throws InvalidUserException{
+		User uresp = userservice.loginUser(user);
+		logger.info("Logged in with: "+uresp.getEmail());
+		return new ResponseEntity<User>(uresp,HttpStatus.OK);
+
 	}
 	
-	@PostMapping("/loginuser")
-	@ApiOperation("Authenticated and Authorized Login")
-	public ResponseEntity<User> loginuser(@RequestBody User user) {
-		if(userservice.isValid(user.getEmail(), user.getPwd()))
-		{
-			if(userservice.UserDetails(user.getEmail(),user.getPwd())!=null)
-			{
-				return new ResponseEntity<User>(userservice.UserDetails(user.getEmail(),user.getPwd()),HttpStatus.OK);
-			}
-		}		
-		return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
-	}
+	
 	
 	@GetMapping("/getAll")
 	@ApiOperation("Fetch all the records of users")
