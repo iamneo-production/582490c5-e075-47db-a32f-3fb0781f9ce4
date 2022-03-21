@@ -66,9 +66,8 @@ function Updatecourse(props) {
           <Label for="title" >Course title</Label>
           <Input type="text" name="title" id="title" placeholder="Enter course title here" required
           value={courses.title}
-          onChange={(e)=>{
-            setCourses({...courses,title:e.target.value})
-          }}/>
+          readOnly
+          />
           </FormGroup>
           <FormGroup>
           <Label for="description" >Course description</Label>
