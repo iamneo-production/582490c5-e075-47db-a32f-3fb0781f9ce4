@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 function Updatecourse(props) {
   const[courses,setCourses]=useState({});
   const Handleform=(e)=>{
+    //updated component
     // const {id}=useParams();
     // console.log(id);
     // console.log(props.match.params.id);
@@ -29,6 +30,7 @@ function Updatecourse(props) {
       },
       (error)=>{
         // console.log(error);
+        //console.log(error);
         console.log(error);
         toast.error("Course was not updated");
       }
