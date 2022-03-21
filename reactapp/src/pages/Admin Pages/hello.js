@@ -3,6 +3,8 @@ import {React} from "react"
 import axios from "axios"
 import base_url from "../../coursesapi"
 import { toast } from "react-toastify"
+import { Link } from "react-router-dom"
+
 
 const hello=({hello,update})=>{
     const deleteCourse=(id)=>{
@@ -19,6 +21,8 @@ const hello=({hello,update})=>{
         )
     }
     
+    
+    
     return(
         <Card className="text-center">
             <CardBody>
@@ -32,7 +36,7 @@ const hello=({hello,update})=>{
                 onClick={()=>{
                     deleteCourse(hello.courseid);
                 }}>Delete</Button> 
-                <Button color="warning ml-3">Update</Button>
+                <Link class="btn btn-warning ml-3" to={`/admincourse/view-course/update/${hello.courseid}`}>Update</Link>
             </Container>
             </CardBody>
         </Card>
