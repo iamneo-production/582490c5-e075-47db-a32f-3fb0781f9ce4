@@ -1,5 +1,5 @@
 import React from "react";
-import College from "./Admin Components/College"
+import CollegesList from "./Admin Components/CollegesList";
 import Navbar from './Admin Components/Navbar';
 import background from './../../assets/adminpage1.jpg'
 
@@ -25,7 +25,7 @@ const SearchBar = () => (
         />
         <button type="submit" id="search"className="search" >Search</button>
         </div>
-        <College/>
+        <CollegesList/>
     </form>
 
 );
