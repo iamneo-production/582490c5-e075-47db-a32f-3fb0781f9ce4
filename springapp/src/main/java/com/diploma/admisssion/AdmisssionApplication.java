@@ -8,7 +8,7 @@ public class AdmisssionApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdmisssionApplication.class, args);
-		//codes
+		//mycodes
 	}
 
 }
