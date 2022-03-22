@@ -122,3 +122,5 @@
 2022-03-22 20:25:19,305 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
 2022-03-22 20:25:19,392 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 30.292 seconds (JVM running for 33.226)
 2022-03-22 20:25:38,211 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5050-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-22 20:25:38,214 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5050-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-03-22 20:25:38,221 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5050-exec-1] Completed initialization in 4 ms
