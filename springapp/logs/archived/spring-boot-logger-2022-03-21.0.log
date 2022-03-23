@@ -739,4 +739,4 @@ java.lang.NullPointerException: Cannot invoke "com.diploma.admisssion.model.Cour
 2022-03-21 22:28:34,257 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-2] Logged in with: karthik@gmail.com
 2022-03-21 22:30:52,369 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-03-21 22:30:52,372 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2022-03-21 22:30:52,381 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-21 22:30:52,381 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed
