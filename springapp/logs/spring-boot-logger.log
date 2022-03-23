@@ -401,3 +401,5 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2022-03-23 15:37:49,927 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
 2022-03-23 15:37:49,989 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 14.719 seconds (JVM running for 15.825)
 2022-03-23 15:38:28,577 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9090-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-23 15:38:28,578 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9090-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-03-23 15:38:28,582 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9090-exec-2] Completed initialization in 2 ms
