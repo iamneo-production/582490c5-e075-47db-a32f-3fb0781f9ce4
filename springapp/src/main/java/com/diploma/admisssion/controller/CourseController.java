@@ -75,13 +75,22 @@ public class CourseController {
 	public ResponseEntity<Courses> editCourse(@PathVariable("id") int id, @RequestBody Courses crs){
 		if(courseservice.courseDetails(id)!=null){
 			Courses crsdt = courseservice.courseDetails(id);
-			crsdt.setTitle(crs.getTitle());
 			crsdt.setCourse_desc(crs.getCourse_desc());
 			crsdt.setInstituteid(crs.getInstituteid());
 			crsdt.setInstitute_name(crs.getInstitute_name());
 			crsdt.setAcademicYear(crs.getAcademicYear());
 			crsdt.setCourseDuration(crs.getCourseDuration());
-			return new ResponseEntity<Courses>(courseservice.saveCourse(crsdt),HttpStatus.OK);
+			Courses editted = courseservice.saveCourse(crsdt);
+
+			List<CourseRegistration> coursereg = courseservice.getCourseRegDetails(crsdt.getTitle());
+			for(CourseRegistration crgs:coursereg){
+				crgs.setAcademicYear(crsdt.getAcademicYear());
+				crgs.setCoursedesc(crsdt.getCourse_desc());
+				crgs.setInstituteName(crsdt.getInstitute_name());
+				courseservice.saveRegistration(crgs);
+			}
+
+			return new ResponseEntity<Courses>(editted,HttpStatus.OK);
 		}
 		return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
@@ -91,9 +100,10 @@ public class CourseController {
 	@ApiOperation("Delete a course")
 	public ResponseEntity<String> deleteCourse(@PathVariable("id") int id){
 		if(courseservice.courseDetails(id)!=null){
-			if(courseservice.deletebyId(id)>0){
+				Courses crd = courseservice.courseDetails(id);
+				courseservice.deletefromCourseReg(crd.getTitle());
+				courseservice.deletebyId(id);
 				return  new ResponseEntity<String>("Course Deleted Successfully", HttpStatus.OK);
-			}
 		}
 		return  new ResponseEntity<>("Course not able to delete", HttpStatus.NOT_FOUND);
 	}

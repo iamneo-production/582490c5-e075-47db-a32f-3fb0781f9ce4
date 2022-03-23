@@ -12,6 +12,8 @@ public class Institutes {
 	@Id
     private int id;
     private String institueName;
+    private String institutePlace;
+    private String imgLocation;
 
     public Institutes() {
 
@@ -31,6 +33,22 @@ public class Institutes {
 
     public void setInstitueName(String institueName) {
         this.institueName = institueName;
+    }
+
+    public String getInstitutePlace() {
+        return institutePlace;
+    }
+
+    public void setInstitutePlace(String institutePlace) {
+        this.institutePlace = institutePlace;
+    }
+
+    public String getImgLocation() {
+        return imgLocation;
+    }
+
+    public void setImgLocation(String imgLocation) {
+        this.imgLocation = imgLocation;
     }
 
 
