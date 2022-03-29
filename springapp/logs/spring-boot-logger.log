@@ -1,3 +1,85 @@
+<<<<<<< HEAD
+2022-03-29 15:39:34,684 INFO org.springframework.boot.StartupInfoLogger [main] Starting AdmisssionApplication using Java 14.0.1 on DESKTOP-QQKQL13 with PID 10500 (D:\Shailesh\Virtusa\Virtusa Project\springapp\target\classes started by Shailesh in D:\Shailesh\Virtusa\Virtusa Project)
+2022-03-29 15:39:34,690 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-29 15:39:34,691 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-29 15:39:35,868 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-29 15:39:36,002 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 107 ms. Found 5 JPA repository interfaces.
+2022-03-29 15:39:36,866 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-03-29 15:39:36,884 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-29 15:39:36,885 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-03-29 15:39:36,887 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-29 15:39:37,034 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-03-29 15:39:37,034 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2251 ms
+2022-03-29 15:39:37,334 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-29 15:39:37,418 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-29 15:39:37,634 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-29 15:39:37,752 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-29 15:39:37,966 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-29 15:39:37,984 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-03-29 15:39:39,007 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-29 15:39:39,015 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 15:39:40,285 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-29 15:39:40,605 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-03-29 15:39:40,980 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-03-29 15:39:41,024 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 15:39:41,027 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-03-29 15:39:41,073 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-03-29 15:39:41,116 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-03-29 15:39:41,295 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteCourseUsingDELETE_1
+2022-03-29 15:39:41,371 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getAllUsingGET_1
+2022-03-29 15:39:41,409 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
+2022-03-29 15:39:41,462 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 7.317 seconds (JVM running for 7.847)
+2022-03-29 15:39:45,296 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 15:39:45,297 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-03-29 15:39:45,302 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2022-03-29 16:53:57,716 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-1] Logged in with: shailesh@gmail.com
+2022-03-29 17:12:50,954 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-2] UserRatings [email=shailesh@gmail.com, institutename=PQW College, name=Shailesh, rating=3.0, ratingId=33, review=Good One]
+2022-03-29 17:13:29,128 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-1] UserRatings [email=shailesh@gmail.com, institutename=PKV College, name=Shailesh, rating=3.5, ratingId=34, review=Good mentors]
+2022-03-29 18:00:07,019 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 18:00:07,027 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-29 18:00:07,035 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-29 19:00:57,815 INFO org.springframework.boot.StartupInfoLogger [main] Starting AdmisssionApplication using Java 14.0.1 on DESKTOP-QQKQL13 with PID 34456 (D:\Shailesh\Virtusa\Virtusa Project\springapp\target\classes started by Shailesh in D:\Shailesh\Virtusa\Virtusa Project)
+2022-03-29 19:00:57,849 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-29 19:00:57,851 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-29 19:00:59,254 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-29 19:00:59,379 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 101 ms. Found 5 JPA repository interfaces.
+2022-03-29 19:01:00,258 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-03-29 19:01:00,298 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-29 19:01:00,298 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-03-29 19:01:00,298 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-29 19:01:00,497 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-03-29 19:01:00,497 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2531 ms
+2022-03-29 19:01:00,778 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-29 19:01:00,846 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-29 19:01:01,042 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-29 19:01:01,154 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-29 19:01:01,373 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-29 19:01:01,400 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-03-29 19:01:02,393 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-29 19:01:02,409 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 19:01:03,828 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-29 19:01:04,157 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-03-29 19:01:04,653 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-03-29 19:01:04,706 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 19:01:04,712 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-03-29 19:01:04,786 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-03-29 19:01:04,879 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-03-29 19:01:05,125 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteCourseUsingDELETE_1
+2022-03-29 19:01:05,250 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getAllUsingGET_1
+2022-03-29 19:01:05,298 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
+2022-03-29 19:01:05,350 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 8.093 seconds (JVM running for 8.511)
+2022-03-29 19:02:52,894 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 19:02:52,899 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-03-29 19:02:52,904 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
+2022-03-29 19:02:53,381 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-2] Logged in with: shailesh@gmail.com
+2022-03-29 19:45:00,083 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-2] Logged in with: shailesh@gmail.com
+2022-03-29 20:37:36,169 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-2] UserRatings [email=shailesh@gmail.com, institutename=EDF College, name=Shailesh, rating=3.0, ratingId=35, review=Bus facility is good.]
+2022-03-29 20:39:21,096 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-2] Logged in with: deepak@gmail.com
+2022-03-29 20:39:54,018 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-8] UserRatings [email=deepak@gmail.com, institutename=Poddar College, name=Deepak, rating=4.0, ratingId=36, review=College is known for placements.]
+2022-03-29 20:41:02,835 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 20:41:02,845 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-29 20:41:02,863 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+=======
 
 2022-03-23 15:03:12,167 INFO org.springframework.boot.StartupInfoLogger [main] Starting AdmisssionApplication using Java 17.0.2 on DESKTOP-ITG4OSL with PID 27588 (C:\Users\Nagaraju\Desktop\New folder\springapp\target\classes started by Nagaraju in C:\Users\Nagaraju\Desktop\New folder)
 2022-03-23 15:03:12,181 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.3, Spring v5.3.15
@@ -1804,3 +1886,82 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2022-03-29 15:38:56,953 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-8] Institutes [id=11, imgLocation=images/ASD.jpg, institueName=ASD College, institutePlace=West Bengal]
 2022-03-29 15:39:14,414 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-10] Logged in with: souravr@gmail.com
 2022-03-29 15:41:02,863 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-8] Logged in with: sourava@gmail.com
+>>>>>>> bc47bdc49fe4776c378d8e00b6615588386e2340
+2022-03-29 21:40:48,211 INFO org.springframework.boot.StartupInfoLogger [main] Starting AdmisssionApplication using Java 14.0.1 on DESKTOP-QQKQL13 with PID 35076 (D:\Shailesh\Virtusa\Virtusa Project\springapp\target\classes started by Shailesh in D:\Shailesh\Virtusa\Virtusa Project)
+2022-03-29 21:40:48,216 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-29 21:40:48,217 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-29 21:40:49,298 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-29 21:40:49,420 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 90 ms. Found 5 JPA repository interfaces.
+2022-03-29 21:40:50,131 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-03-29 21:40:50,164 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-29 21:40:50,166 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-03-29 21:40:50,167 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-29 21:40:50,316 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-03-29 21:40:50,332 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2049 ms
+2022-03-29 21:40:50,578 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-29 21:40:50,633 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-29 21:40:50,783 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-29 21:40:50,903 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-29 21:40:51,073 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-29 21:40:51,094 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-03-29 21:40:52,032 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-29 21:40:52,058 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 21:40:53,271 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-29 21:40:53,582 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-03-29 21:40:53,936 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-03-29 21:40:53,980 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 21:40:53,983 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-03-29 21:40:54,026 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-03-29 21:40:54,066 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-03-29 21:40:54,208 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteCourseUsingDELETE_1
+2022-03-29 21:40:54,272 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
+2022-03-29 21:40:54,292 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getAllUsingGET_1
+2022-03-29 21:40:54,327 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_2
+2022-03-29 21:40:54,368 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 6.618 seconds (JVM running for 6.951)
+2022-03-29 21:40:58,651 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 21:40:58,652 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-03-29 21:40:58,655 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2022-03-29 21:42:04,299 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 21:42:04,302 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-29 21:42:04,321 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-03-29 21:43:14,542 INFO org.springframework.boot.StartupInfoLogger [main] Starting AdmisssionApplication using Java 14.0.1 on DESKTOP-QQKQL13 with PID 31632 (D:\Shailesh\Virtusa\Virtusa Project\springapp\target\classes started by Shailesh in D:\Shailesh\Virtusa\Virtusa Project)
+2022-03-29 21:43:14,547 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-29 21:43:14,547 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-29 21:43:15,633 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-29 21:43:15,720 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
+2022-03-29 21:43:16,431 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-03-29 21:43:16,455 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-03-29 21:43:16,457 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-03-29 21:43:16,459 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-29 21:43:16,635 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-03-29 21:43:16,635 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2003 ms
+2022-03-29 21:43:16,985 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-29 21:43:17,069 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-29 21:43:17,290 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-29 21:43:17,417 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-29 21:43:17,609 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-29 21:43:17,633 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-03-29 21:43:18,475 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-29 21:43:18,495 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 21:43:19,669 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-29 21:43:19,955 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-03-29 21:43:20,394 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-03-29 21:43:20,431 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 21:43:20,433 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-03-29 21:43:20,466 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-03-29 21:43:20,526 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-03-29 21:43:20,686 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteCourseUsingDELETE_1
+2022-03-29 21:43:20,759 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_1
+2022-03-29 21:43:20,789 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getAllUsingGET_1
+2022-03-29 21:43:20,847 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: addUsingPOST_2
+2022-03-29 21:43:20,899 INFO org.springframework.boot.StartupInfoLogger [main] Started AdmisssionApplication in 6.855 seconds (JVM running for 7.186)
+2022-03-29 21:43:27,096 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 21:43:27,099 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-03-29 21:43:27,103 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2022-03-29 21:44:30,787 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-1] Institutes [id=11, imgLocation=images/RPD.jpg, institueName=RPD Institute, institutePlace=Chennai]
+2022-03-29 21:51:37,940 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-10] Logged in with: shailesh@gmail.com
+2022-03-29 21:55:38,796 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-10] Logged in with: karthik@gmail.com
+2022-03-29 21:58:16,106 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-4] Logged in with: shailesh@gmail.com
+2022-03-29 21:58:49,768 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-29 21:58:49,773 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-03-29 21:58:49,792 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

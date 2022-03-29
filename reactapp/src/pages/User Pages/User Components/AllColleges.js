@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import InstituteDataService from '../Institute-Service/InstituteService-User'
-import CollegeCard from "./CollegeCard";
+import CollegeCard from './CollegeCard'
 import "./style.css";
 
 let colleges=[]

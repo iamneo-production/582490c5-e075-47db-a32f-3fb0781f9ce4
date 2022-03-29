@@ -17,6 +17,7 @@ public class Institutes {
     private double rating;
     private String InstituteDescription;
 
+
     public double getRating() {
         return rating;
     }

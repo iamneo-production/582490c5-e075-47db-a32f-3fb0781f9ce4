@@ -241,7 +241,7 @@ export default class CourseEnroll extends Component{
 
             <div class="p-3 mb-2 bg-light text-dark">
                 <label htmlFor="hscmarks" className="text-success form-label">
-                  <strong>HSC/12th Marks:</strong>
+                  <strong>HSC/12th Percentage:</strong>
                 </label>
                   <input
                     required
@@ -253,7 +253,7 @@ export default class CourseEnroll extends Component{
                     name="hscmarks"
                   />
                 <div className="invalid-feedback">
-                    Mark is required!
+                    Percentage is required!
                 </div>
             </div>
             <button type="submit" onClick={this.enrollCourse} className="btn btn-success">
