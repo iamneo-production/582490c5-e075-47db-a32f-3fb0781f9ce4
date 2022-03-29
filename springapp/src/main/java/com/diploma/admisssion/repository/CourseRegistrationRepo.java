@@ -22,4 +22,6 @@ public interface CourseRegistrationRepo extends JpaRepository<CourseRegistration
 	
 	int deleteByRegidAndUseremail(int regid, String useremail);
 
+	int deleteByInstituteName(String institute_name);
+
 }

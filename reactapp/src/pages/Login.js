@@ -60,6 +60,7 @@ const Login = () => {
                                             mobno=d.mobno
                                             emailadd=d.email
                                             history.push('/user')
+                                            //login
                                         }
                                     })
                                 }

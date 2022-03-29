@@ -7,6 +7,9 @@ import com.diploma.admisssion.model.Institutes;
 @Repository
 public interface InstituteRepo extends JpaRepository<Institutes, Integer>{
 
-    Institutes findById(int id);
+    Institutes findByInstitutesid(int institutesid);
+    Institutes findByInstitutesidAndInstitueName(int institutesid, String institute_name);
+    int deleteByInstitutesid(int institutesid);
+    Institutes findByInstitueName(String institueName);
     
 }
