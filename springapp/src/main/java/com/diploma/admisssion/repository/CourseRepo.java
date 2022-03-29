@@ -17,5 +17,6 @@ public interface CourseRepo extends JpaRepository<Courses, Integer>{
 
 	int deleteByCourseid(int courseid);
 
+	int deleteByInstituteid(int institutesid);
 
 }

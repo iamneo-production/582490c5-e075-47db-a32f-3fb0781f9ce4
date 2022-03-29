@@ -16,4 +16,8 @@ public interface InstituteRepo extends JpaRepository<Institutes, Integer>{
 
     List<Institutes> findByInstitueNameContaining(String institueName);
     
+    Institutes findByInstitutesidAndInstitueName(int institutesid, String institute_name);
+    int deleteByInstitutesid(int institutesid);
+    
+    
 }

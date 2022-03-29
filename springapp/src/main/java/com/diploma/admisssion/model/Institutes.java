@@ -17,13 +17,6 @@ public class Institutes {
     private double rating;
     private String InstituteDescription;
 
-    public String getInstituteDescription() {
-        return InstituteDescription;
-    }
-
-    public void setInstituteDescription(String instituteDescription) {
-        InstituteDescription = instituteDescription;
-    }
 
     public double getRating() {
         return rating;
@@ -31,6 +24,14 @@ public class Institutes {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public String getInstituteDescription() {
+        return InstituteDescription;
+    }
+
+    public void setInstituteDescription(String instituteDescription) {
+        InstituteDescription = instituteDescription;
     }
 
     public Institutes() {
@@ -41,7 +42,11 @@ public class Institutes {
         return institutesid;
     }
 
-    public void setInstitutesid(int institutesid) {
+    public int getInstitutesId() {
+        return institutesid;
+    }
+
+    public void setInstitutesId(int institutesid) {
         this.institutesid = institutesid;
     }
 
@@ -68,6 +73,13 @@ public class Institutes {
     public void setImgLocation(String imgLocation) {
         this.imgLocation = imgLocation;
     }
+
+    @Override
+    public String toString() {
+        return "Institutes [id=" + institutesid + ", imgLocation=" + imgLocation + ", institueName=" + institueName
+                + ", institutePlace=" + institutePlace + "]";
+    }
+
 
 
 
