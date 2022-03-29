@@ -35,14 +35,15 @@ public class InstituteServiceImpl  implements InstituteService{
         return null;
     }
 
+   
     @Override
     public Institutes addInstitute(Institutes ins) throws InstituteAlreadyExistException{
         
         if(instrepo.findByInstitueName(ins.getInstitueName())!=null){
             throw new InstituteAlreadyExistException(ins.getInstitueName());
-        }
-		return instrepo.save(ins);
-	}
+              }
+		   return instrepo.save(ins);
+	   }
 
     @Override
     public Institutes instituteDetails(int id) {
