@@ -38,5 +38,16 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
         return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(InstituteNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleInstiuteNotFoundException(Exception ex){
+        ErrorResponse err = new ErrorResponse();
+        err.setTimestamp(LocalDateTime.now());
+        err.setStatus(HttpStatus.BAD_REQUEST.value());
+        err.setMessage(ex.getMessage());
+        logger.error("Error", ex);
+
+        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
+    }
     
 }

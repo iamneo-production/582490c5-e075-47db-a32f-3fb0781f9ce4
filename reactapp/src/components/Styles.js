@@ -4,6 +4,8 @@ import background from './../assets/bg.jpg';
 
 import couresbg from './../assets/rr8.jpg'
 
+import instiutebg from './../assets/bluebg.jpg'
+
 
 import {Link} from 'react-router-dom';
 import background1 from './../assets/adminpage1.jpg'
@@ -183,7 +185,7 @@ export const ExtraText = styled.p`
 export const TextLink = styled(Link)`
     text-decoration: none;
     font-size: ${(props) => props.size}px;
-    color: ${colors.theme};
+    color: ${(props) => props.color ? props.color:colors.theme};
     transition: ease-in-out 0.3s;
 
     &:hover{
@@ -283,6 +285,15 @@ export const UnEnrollButton = styled(Link)`
         cursor: pointer;
     }
 
+`;
+
+
+export const InstituteInfoContainer = styled.div`
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${instiutebg});
+    background-size: cover;
+    background-attachment: fixed;
 `;
 
 

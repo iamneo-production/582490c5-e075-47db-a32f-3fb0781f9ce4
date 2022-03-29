@@ -23,6 +23,8 @@ import UserInstitute from './pages/User Pages/UserInstitute';
 import Userprofile from './pages/User Pages/Userprofile';
 import CourseEnroll from './pages/User Pages/enroll-course';
 import CourseUnenroll from './pages/User Pages/course-unenroll';
+import UserRating from './pages/User Pages/User Components/UserReviewRating';
+import InstituteInfo from './pages/User Pages/User Components/InstituteInfo';
 
 
 
@@ -64,6 +66,10 @@ function App() {
           </Route>
 
           <Route path="/enroll/:id" component={CourseEnroll} />
+
+          <Route path="/rate/:id" component={UserRating} />
+
+          <Route path="/info/:id" component={InstituteInfo} />
 
           <Route path="/unenroll/:id" component={CourseUnenroll} />
           <Route path="/admin" component={()=> <Admin authorized={authorized}/>}/>
