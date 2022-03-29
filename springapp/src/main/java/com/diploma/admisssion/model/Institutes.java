@@ -10,21 +10,39 @@ public class Institutes {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-    private int id;
+    private int institutesid;
     private String institueName;
     private String institutePlace;
     private String imgLocation;
+    private double rating;
+    private String InstituteDescription;
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public String getInstituteDescription() {
+        return InstituteDescription;
+    }
+
+    public void setInstituteDescription(String instituteDescription) {
+        InstituteDescription = instituteDescription;
+    }
 
     public Institutes() {
 
     }
 
-    public int getId() {
-        return id;
+    public int getInstitutesId() {
+        return institutesid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setInstitutesId(int institutesid) {
+        this.institutesid = institutesid;
     }
 
     public String getInstitueName() {
@@ -50,6 +68,13 @@ public class Institutes {
     public void setImgLocation(String imgLocation) {
         this.imgLocation = imgLocation;
     }
+
+    @Override
+    public String toString() {
+        return "Institutes [id=" + institutesid + ", imgLocation=" + imgLocation + ", institueName=" + institueName
+                + ", institutePlace=" + institutePlace + "]";
+    }
+
 
 
 
