@@ -891,3 +891,4 @@ org.hibernate.StaleStateException: Batch update returned unexpected row count fr
 	at java.base/java.lang.Thread.run(Unknown Source)
 2022-03-29 13:27:06,990 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-7] Logged in with: souravr@gmail.com
 2022-03-29 13:27:22,041 INFO com.diploma.admisssion.controller.UserContoller [http-nio-8080-exec-8] Logged in with: sourava@gmail.com
+2022-03-29 13:27:54,349 INFO com.diploma.admisssion.controller.InstituteController [http-nio-8080-exec-3] Institutes [id=10, imgLocation=images/ASD.jpg, institueName=ASD College, institutePlace=Tamil Nadu]
