@@ -11,7 +11,7 @@ const CollegeCard = ({ collegedata }) => {
     <>
       <section className="main-card--cointainer">
         {collegedata.map((curElem, index) => {
-          const { institutesid, institueName, imgLocation, institutePlace, rating} = curElem;
+          const { institutesId, institueName, imgLocation, institutePlace, rating} = curElem;
 
           return (
             <>
@@ -20,7 +20,7 @@ const CollegeCard = ({ collegedata }) => {
                   <div className="card-body">
                     <span className="card-number card-circle subtle">{index+1}</span>
                     {<img src={imgLocation} alt="images" className="card-media" />  }
-                    <TextLink color={colors.dark1} to={"/info/"+institutesid}>
+                    <TextLink color={colors.dark1} to={"/info/"+institutesId}>
                     <h1 className="text-center">
                       <strong>{institueName}</strong>
                     </h1>
@@ -29,7 +29,7 @@ const CollegeCard = ({ collegedata }) => {
                       <h2>{institutePlace}</h2>
                     </span>
                     <Rating name="half-rating-read" value={rating} precision={0.5} readOnly size="large" />
-                    <TextLink to={"/rate/" + institutesid}>Rate Now</TextLink>
+                    <TextLink to={"/rate/" + institutesId}>Rate Now</TextLink>
                     {/* <br></br>
                     <TextLink to="/usercourse">Courses</TextLink> */}
                   </div>                 

@@ -38,10 +38,6 @@ public class Institutes {
 
     }
 
-    public int getInstitutesid() {
-        return institutesid;
-    }
-
     public int getInstitutesId() {
         return institutesid;
     }
