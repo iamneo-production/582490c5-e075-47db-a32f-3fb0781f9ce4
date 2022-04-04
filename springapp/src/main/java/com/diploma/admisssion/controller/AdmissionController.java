@@ -25,6 +25,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import io.swagger.annotations.ApiOperation;
+/// auto static
 
 @RestController
 @RequestMapping("/admission")
