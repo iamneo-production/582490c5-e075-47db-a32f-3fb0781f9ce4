@@ -37,6 +37,17 @@ public class Courses {
 
 	
 	
+	public Courses(int courseid, String title, String course_desc, int instituteid, String institute_name,
+			String academicYear, String courseDuration) {
+		this.courseid = courseid;
+		this.title = title;
+		this.course_desc = course_desc;
+		this.instituteid = instituteid;
+		this.institute_name = institute_name;
+		this.academicYear = academicYear;
+		this.courseDuration = courseDuration;
+	}
+
 	public Courses() {
 		
 	}

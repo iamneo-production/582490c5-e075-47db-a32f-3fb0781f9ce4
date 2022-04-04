@@ -124,6 +124,13 @@ public class CourseServiceImpl implements CourseService {
 		return crgrepo.save(crgs);
 	}
 
+	@Override
+	public List<CourseRegistration> getAllRegisteredCourses() {
+		return crgrepo.findAll();
+	}
+
+	
+
 	
 
 }

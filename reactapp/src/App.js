@@ -15,6 +15,8 @@ import Course from './pages/Admin Pages/course';
 import Students from './pages/Admin Pages/students'
 import Institute from './pages/Admin Pages/institute';
 import AdminProfile from './pages/Admin Pages/AdminProfile';
+import AdmitStudent from './pages/Admin Pages/AdmitStudent';
+import DenyAdmission from './pages/Admin Pages/DenyAdmission';
 //User
 import User from './pages/User';
 import userCourse from './pages/User Pages/userCourse'
@@ -78,6 +80,9 @@ function App() {
 		      <Route path='/admininstitute' component={Institute} />
 		      <Route path='/admincourse' component={Course} />
 		      <Route path='/adminstudents' component={Students}/>
+
+          <Route path="/admit/:id" component={AdmitStudent} />
+          <Route path="/deny-admission/:id" component={DenyAdmission} />
           
 
           <Route path="/user" component={()=> <User authorized={authorized}/>}/>

@@ -21,6 +21,17 @@ public class User {
 	private String confirmpwd;
 	
 	
+	
+	public User(int userid, String user_type, String email, String name, String mobno, String pwd, String confirmpwd) {
+		this.userid = userid;
+		this.user_type = user_type;
+		this.email = email;
+		this.name = name;
+		this.mobno = mobno;
+		this.pwd = pwd;
+		this.confirmpwd = confirmpwd;
+	}
+
 	public User() {
 		
 	}

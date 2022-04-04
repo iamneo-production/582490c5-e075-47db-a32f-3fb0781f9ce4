@@ -8,6 +8,8 @@ import com.diploma.admisssion.model.Courses;
 public interface CourseService {
 	
 	public List<Courses> getAllCourses();
+
+	public List<CourseRegistration> getAllRegisteredCourses();
 	
 	public List<Courses> getCoursebyTitle(String title);
 	

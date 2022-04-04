@@ -50,13 +50,15 @@ export default class CourseEnroll extends Component{
 
       enrollCourse(){
         var email = emailadd
+        var username = name
         var data = {
             academicYear: this.state.currentCourse.academicYear,
             coursedesc: this.state.currentCourse.course_desc,
             hscmarks: this.state.HSCMarks,
             instituteName: this.state.currentCourse.institute_name,
             title: this.state.currentCourse.title,
-            useremail: email
+            useremail: email,
+            username: username
           };
           CoursesServiceUser.enroll(data)
           .then(response => {

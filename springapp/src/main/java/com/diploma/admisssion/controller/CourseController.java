@@ -166,6 +166,15 @@ public class CourseController {
 		}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+
+	@GetMapping("/getAllregistered")
+	@ApiOperation("View Registred Courses List")
+	public ResponseEntity<List<CourseRegistration>> getregisteredlist(){
+		if(courseservice.getAllRegisteredCourses().size()>0){
+			return new ResponseEntity<>(courseservice.getAllRegisteredCourses(),HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	} 
 	
 	
 

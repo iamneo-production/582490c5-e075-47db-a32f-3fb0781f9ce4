@@ -267,6 +267,17 @@ export const EnrolledContainer = styled.div`
     background-attachment: fixed;
 `;
 
+export const AdmissionContainer = styled.div`
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background});
+    align-items: flex-start;
+    background-size: cover;
+    background-attachment: fixed;
+`;
+
 export const UnEnrollButton = styled(Link)`
     padding: 10px;
     width: 50px;
