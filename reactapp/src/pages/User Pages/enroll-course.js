@@ -50,13 +50,15 @@ export default class CourseEnroll extends Component{
 
       enrollCourse(){
         var email = emailadd
+        var username = name
         var data = {
             academicYear: this.state.currentCourse.academicYear,
             coursedesc: this.state.currentCourse.course_desc,
             hscmarks: this.state.HSCMarks,
             instituteName: this.state.currentCourse.institute_name,
             title: this.state.currentCourse.title,
-            useremail: email
+            useremail: email,
+            username: username
           };
           CoursesServiceUser.enroll(data)
           .then(response => {
@@ -241,7 +243,7 @@ export default class CourseEnroll extends Component{
 
             <div class="p-3 mb-2 bg-light text-dark">
                 <label htmlFor="hscmarks" className="text-success form-label">
-                  <strong>HSC/12th Marks:</strong>
+                  <strong>HSC/12th Percentage:</strong>
                 </label>
                   <input
                     required
@@ -253,7 +255,7 @@ export default class CourseEnroll extends Component{
                     name="hscmarks"
                   />
                 <div className="invalid-feedback">
-                    Mark is required!
+                    Percentage is required!
                 </div>
             </div>
             <button type="submit" onClick={this.enrollCourse} className="btn btn-success">

@@ -15,6 +15,8 @@ import Course from './pages/Admin Pages/course';
 import Students from './pages/Admin Pages/students'
 import Institute from './pages/Admin Pages/institute';
 import AdminProfile from './pages/Admin Pages/AdminProfile';
+import AdmitStudent from './pages/Admin Pages/AdmitStudent';
+import DenyAdmission from './pages/Admin Pages/DenyAdmission';
 //User
 import User from './pages/User';
 import userCourse from './pages/User Pages/userCourse'
@@ -23,6 +25,8 @@ import UserInstitute from './pages/User Pages/UserInstitute';
 import Userprofile from './pages/User Pages/Userprofile';
 import CourseEnroll from './pages/User Pages/enroll-course';
 import CourseUnenroll from './pages/User Pages/course-unenroll';
+import UserRating from './pages/User Pages/User Components/UserReviewRating';
+import InstituteInfo from './pages/User Pages/User Components/InstituteInfo';
 
 
 
@@ -65,6 +69,10 @@ function App() {
 
           <Route path="/enroll/:id" component={CourseEnroll} />
 
+          <Route path="/rate/:id" component={UserRating} />
+
+          <Route path="/info/:id" component={InstituteInfo} />
+
           <Route path="/unenroll/:id" component={CourseUnenroll} />
           <Route path="/admin" component={()=> <Admin authorized={authorized}/>}/>
 
@@ -72,6 +80,9 @@ function App() {
 		      <Route path='/admininstitute' component={Institute} />
 		      <Route path='/admincourse' component={Course} />
 		      <Route path='/adminstudents' component={Students}/>
+
+          <Route path="/admit/:id" component={AdmitStudent} />
+          <Route path="/deny-admission/:id" component={DenyAdmission} />
           
 
           <Route path="/user" component={()=> <User authorized={authorized}/>}/>
