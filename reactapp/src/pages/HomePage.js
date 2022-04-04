@@ -15,7 +15,6 @@ const HomePage = () => {
                 <Avatar image={RambosLogo} />
             </div>
             <StyledTitle size={65}>
-                Welcome to RAMBOS Admission 
             </StyledTitle>
             <StyledSubTitle size={27}>
                 India's #1 Web Admission Portal

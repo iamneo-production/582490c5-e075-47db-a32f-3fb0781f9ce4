@@ -12,11 +12,20 @@ public class CourseRegistration {
 	@Id
 	private int regid;
 	private String useremail;
-	private int HSCmarks;
+	private String username;
+	private float HSCmarks;
 	private String coursedesc;
 	private String title;
 	private String instituteName;
 	private String academicYear;
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
 
 	public String getAcademicYear(){
@@ -52,11 +61,11 @@ public class CourseRegistration {
 		this.useremail = useremail;
 	}
 
-	public int getHSCmarks() {
+	public float getHSCmarks() {
 		return HSCmarks;
 	}
 
-	public void setHSCmarks(int hSCmarks) {
+	public void setHSCmarks(float hSCmarks) {
 		HSCmarks = hSCmarks;
 	}
 
