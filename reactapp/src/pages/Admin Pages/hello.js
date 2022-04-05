@@ -26,7 +26,7 @@ const hello=({hello,update})=>{
     return(
         <Card className="text-center">
             <CardBody>
-            <CardSubtitle className="font-weight-bold">{hello.title} </CardSubtitle>
+            <CardSubtitle className="font-weight-bold"><strong>{hello.title}</strong> </CardSubtitle>
             <CardText>{hello.course_desc}</CardText>
             <CardText>{hello.institute_name}</CardText>
             <CardText>{hello.courseDuration}</CardText>

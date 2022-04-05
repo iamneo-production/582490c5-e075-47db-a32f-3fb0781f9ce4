@@ -1,33 +1,28 @@
 import React from "react";
 import CollegesList from "./Admin Components/CollegesList";
 import Navbar from './Admin Components/Navbar';
+import {useHistory} from 'react-router-dom'
+import InstituteList from "./Admin Components/InstitutesList";
 import background from './../../assets/adminpage1.jpg'
 
-const SearchBar = () => (
+const SearchBar = () => {
 
-    <form action="/" method="get">
+    const history = useHistory()
+
+    const AddAcademy = () => {
+        history.push('/addacdemy')
+      }
+
+    return(
+        <>
         <Navbar />
-        <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '15vh',
-            backgroundImage:`url(${background})`
-        }}
-        >
-        <input
-            className="box"
-            type="text"
-            id="search_text"
-            placeholder="Type here to search Institute"
-            name="s" 
-        />
-        <button type="submit" id="search"className="search" >Search</button>
-        </div>
-        <CollegesList/>
-    </form>
+        <button type="button" id="add" className="btn btn-success" onClick={AddAcademy}>Add Institute</button>
+        <InstituteList/>
+        </>
+    )
 
-);
+}
+    
+
 
 export default SearchBar;

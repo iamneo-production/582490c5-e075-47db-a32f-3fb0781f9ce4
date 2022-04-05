@@ -17,6 +17,9 @@ import Institute from './pages/Admin Pages/institute';
 import AdminProfile from './pages/Admin Pages/AdminProfile';
 import AdmitStudent from './pages/Admin Pages/AdmitStudent';
 import DenyAdmission from './pages/Admin Pages/DenyAdmission';
+import AddAcademy from './pages/Admin Pages/AddAcademy';
+import EditAcademy from './pages/Admin Pages/EditAcademy';
+
 //User
 import User from './pages/User';
 import userCourse from './pages/User Pages/userCourse'
@@ -80,6 +83,9 @@ function App() {
 		      <Route path='/admininstitute' component={Institute} />
 		      <Route path='/admincourse' component={Course} />
 		      <Route path='/adminstudents' component={Students}/>
+
+          <Route path='/addacdemy' component={AddAcademy}/>
+          <Route path="/editAcademy/:id" component={EditAcademy} />
 
           <Route path="/admit/:id" component={AdmitStudent} />
           <Route path="/deny-admission/:id" component={DenyAdmission} />

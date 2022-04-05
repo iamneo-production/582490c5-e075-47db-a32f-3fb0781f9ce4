@@ -18,6 +18,14 @@ public class Institutes {
     private String InstituteDescription;
 
 
+    public String getInstituteDescription() {
+        return InstituteDescription;
+    }
+
+    public void setInstituteDescription(String instituteDescription) {
+        InstituteDescription = instituteDescription;
+    }
+
     public double getRating() {
         return rating;
     }
@@ -26,13 +34,7 @@ public class Institutes {
         this.rating = rating;
     }
 
-    public String getInstituteDescription() {
-        return InstituteDescription;
-    }
-
-    public void setInstituteDescription(String instituteDescription) {
-        InstituteDescription = instituteDescription;
-    }
+    
 
     public Institutes() {
 
@@ -72,10 +74,12 @@ public class Institutes {
 
     @Override
     public String toString() {
-        return "Institutes [id=" + institutesid + ", imgLocation=" + imgLocation + ", institueName=" + institueName
-                + ", institutePlace=" + institutePlace + "]";
+        return "Institutes [InstituteDescription=" + InstituteDescription + ", imgLocation=" + imgLocation
+                + ", institueName=" + institueName + ", institutePlace=" + institutePlace + ", institutesid="
+                + institutesid + ", rating=" + rating + "]";
     }
 
+    
 
 
 
