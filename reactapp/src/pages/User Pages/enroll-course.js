@@ -146,14 +146,16 @@ export default class CourseEnroll extends Component{
                 <label htmlFor="description" className="text-success form-label">
                   <strong>Description:</strong>
                 </label>
-                  <input
-                    type="text"
-                    readonly class="form-control-plaintext"
-                    id="description"
-                    required
+                  <textarea
+                    className="form-control-plaintext"
+                    readOnly
                     value={currentCourse.course_desc}
+                    required
+                    id="description"
                     name="description"
-                  />
+                  >
+
+                  </textarea>
             </div>
 
             <div class="p-3 mb-2 bg-light text-dark">

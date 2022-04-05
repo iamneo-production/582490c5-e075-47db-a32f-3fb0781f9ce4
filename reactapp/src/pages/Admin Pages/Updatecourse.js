@@ -63,14 +63,14 @@ function Updatecourse(props) {
           </FormGroup> */}
           
           <FormGroup>
-          <Label for="title" >Course title</Label>
+          <Label for="title" ><strong>Course Title</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter course title here" required
           value={courses.title}
           readOnly
           />
           </FormGroup>
           <FormGroup>
-          <Label for="description" >Course description</Label>
+          <Label for="description" ><strong>Course Description</strong></Label>
           <Input type="textarea" name="description" id="description" placeholder="Enter description here" required
           value={courses.course_desc}
           onChange={(e)=>{
@@ -78,7 +78,7 @@ function Updatecourse(props) {
           }}/>
            </FormGroup>
           <FormGroup>
-          <Label for="userId" >Institute id</Label>
+          <Label for="userId" ><strong>Institute Id</strong></Label>
           <Input type="text" name="userId" id="userId" placeholder="Enter institute id here" required
           value={courses.instituteid}
           onChange={(e)=>{
@@ -86,7 +86,7 @@ function Updatecourse(props) {
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Institute name</Label>
+          <Label for="title" ><strong>Institute Name</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter institute name here" required
           value={courses.institute_name}
           onChange={(e)=>{
@@ -94,7 +94,7 @@ function Updatecourse(props) {
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Course duration</Label>
+          <Label for="title" ><strong>Course Duration</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter course duration here" required
           value={courses.courseDuration}
           onChange={(e)=>{
@@ -102,7 +102,7 @@ function Updatecourse(props) {
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Academic year</Label>
+          <Label for="title" ><strong>Academic Year</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter academic year" required
           value={courses.academicYear}
           onChange={(e)=>{

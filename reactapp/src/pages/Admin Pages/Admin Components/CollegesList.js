@@ -8,6 +8,7 @@ let colleges=[]
 const CollegesList = () => {
 
 
+
   useEffect (()=>{
     getAllColleges();
   },[]);
@@ -23,21 +24,13 @@ const CollegesList = () => {
     })
   }
 
+  
+
 
   return(
     <>
       <CollegeCard collegedata={colleges}>
       </CollegeCard>
-      <div
-      style={{
-        display: 'flex',
-        justifyContent: 'right',
-        alignItems: 'right',
-        height: '10vh',
-    }}
-    >
-      <button type="button" id="add">Add Academy</button>
-      </div>
     </>
   )
 

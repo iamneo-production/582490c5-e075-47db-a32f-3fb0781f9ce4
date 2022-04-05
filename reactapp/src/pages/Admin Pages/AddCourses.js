@@ -45,42 +45,42 @@ const AddCourses=()=> {
           }}/>
           </FormGroup> */}
           <FormGroup>
-          <Label for="title" >Course title</Label>
+          <Label for="title" ><strong>Course Title</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter course title here" required
           onChange={(e)=>{
             setCourses({...courses,title:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="userId" >Institute id</Label>
+          <Label for="userId" ><strong>Institute Id</strong></Label>
           <Input type="text" name="userId" id="userId" placeholder="Enter institute id here" required
           onChange={(e)=>{
             setCourses({...courses,instituteid:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="description" >Course description</Label>
+          <Label for="description" ><strong>Course Description</strong></Label>
           <Input type="textarea" name="description" id="description" placeholder="Enter description here" required
           onChange={(e)=>{
             setCourses({...courses,course_desc:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Institute name</Label>
+          <Label for="title" ><strong>Institute Name</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter institute name here" required
           onChange={(e)=>{
             setCourses({...courses,institute_name:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Course duration</Label>
+          <Label for="title" ><strong>Course Duration</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter course duration here" required
           onChange={(e)=>{
             setCourses({...courses,courseDuration:e.target.value})
           }}/>
           </FormGroup>
           <FormGroup>
-          <Label for="title" >Academic year</Label>
+          <Label for="title" ><strong>Academic Year</strong></Label>
           <Input type="text" name="title" id="title" placeholder="Enter academic year" required
           onChange={(e)=>{
             setCourses({...courses,academicYear:e.target.value})

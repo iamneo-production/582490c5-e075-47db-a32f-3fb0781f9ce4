@@ -117,6 +117,7 @@ public class InstituteController {
 		if(instservice.instituteDetails(id)!=null){
 			Institutes insdt = instservice.instituteDetails(id);
 			insdt.setInstitutePlace(ins.getInstitutePlace());
+            insdt.setInstituteDescription(ins.getInstituteDescription());
 			insdt.setImgLocation(ins.getImgLocation());
 			Institutes editted = instservice.saveInstitute(insdt);
 

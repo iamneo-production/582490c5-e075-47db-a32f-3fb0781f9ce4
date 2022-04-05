@@ -1,29 +1,49 @@
 import React from "react";
+import axios from "axios"
+import base_url from "./../../../coursesapi"
+import { toast } from "react-toastify"
+import {useHistory} from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 const CollegeCard = ({ collegedata }) => {
+
+  const deleteInstitute = (id) => {
+    axios.delete(`${base_url}/institutes/delete/${id}`)
+    .then(response => {
+      console.log(response.data)
+      toast.success("Institute Deleted")
+    })
+  }
+
+  const history = useHistory()
+
   
   return (
     <>
       <section className="main-card--cointainer">
-        {collegedata.map((curElem) => {
-          const {  id, institueName, imgLocation, institutePlace} = curElem;
+        {collegedata.map((curElem, index) => {
+          const {  institutesId, institueName, imgLocation, institutePlace} = curElem;
 
           return (
             <>
-              <div className="card-container" key={id}>
+              <div className="card-container" key={institutesId}>
                 <div className="card ">
                   <div className="card-body">
-                    <span className="card-number card-circle subtle">{id}</span>
-                    <h2 className="card-title"> {institueName} </h2>
+                    <span className="card-number card-circle subtle">{index+1}</span>
+                    <h1>
+                      <strong>{institueName}</strong>  
+                    </h1>
                     <span className="card-description subtle">
                       <h3>{institutePlace}</h3>
                     </span>
-                    <div className="card-read">Read More</div>
                   </div>
                 <img src={imgLocation} alt="images" className="card-media" /> 
 
-                  <span className="card-tag  subtle">Edit</span>
-                  <span className="card-tag subtle">Delete</span>
+                  {/* <span className="card-tag  subtle">Edit</span>
+                  <span className="card-tag subtle">Delete</span> */}
+                  <br></br>
+                  <Link className="btn btn-warning" to={`/editAcademy/${institutesId}`}>Edit</Link>
+                  <button type="button" className="btn btn-danger" onClick={()=> {deleteInstitute(institutesId)}}>Delete</button>
                 </div>
               </div>
             </>
