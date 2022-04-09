@@ -16,7 +16,9 @@ public class AdmisssionApplication {
 	public static void main(String[] args) {
 		//System.setProperty("spring.main.lazy-initialization", "true");
 		SpringApplication.run(AdmisssionApplication.class, args);
-		//  main codes
+
+		// main 
+
 		
 		
 	}
