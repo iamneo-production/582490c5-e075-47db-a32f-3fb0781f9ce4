@@ -20,7 +20,8 @@ export default class AdmitStudent extends Component{
                 title: "",
                 instituteName: "",
                 academicYear: "",
-                hscmarks: null
+                hscmarks: null,
+                eligibleMarks: null
             },
             admitted: false,
             issubmitted: false
@@ -100,6 +101,7 @@ export default class AdmitStudent extends Component{
                                         <th>Institute Name</th>
                                         <th>Academic Year</th>
                                         <th>HSC Percentage</th>
+                                        <th>Eligibility Marks</th>
                                     </tr>
                                 </thead>
 
@@ -110,6 +112,7 @@ export default class AdmitStudent extends Component{
                                             <td className="align-middle text-center"> {registeredCourse.instituteName} </td>
                                             <td className="align-middle text-center"> {registeredCourse.academicYear} </td>
                                             <td className="align-middle text-center"> {registeredCourse.hscmarks} </td>
+                                            <td className="align-middle text-center"> {registeredCourse.eligibleMarks} </td>
                                         </tr>
                                 </tbody>
                                 

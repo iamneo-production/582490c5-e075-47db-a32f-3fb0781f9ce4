@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CoursesServiceUser from "./CourseService-User/CoursesService-User";
 import {emailadd, name, mobno} from './../Login'
+import { Container} from 'reactstrap';
+import axios from "axios";
 import {TextLink, StyledFormArea, StyledTitle, CoursesContainer, colors} from './../../components/Styles'
 
 export default class CourseEnroll extends Component{
@@ -10,6 +12,7 @@ export default class CourseEnroll extends Component{
         this.getCourse = this.getCourse.bind(this);
         this.enrollCourse = this.enrollCourse.bind(this);
         this.onChangeHSCMarks = this.onChangeHSCMarks.bind(this);
+        this.uploadFile = this.uploadFile.bind(this);
     
         this.state = {
           currentCourse: {
@@ -20,6 +23,7 @@ export default class CourseEnroll extends Component{
             institute_name: ""
           },
           HSCMarks: null,
+          marksfile: "",
           enrolled: false,
           alreadyenrolled: false
         };
@@ -48,6 +52,23 @@ export default class CourseEnroll extends Component{
         });
       }
 
+      uploadFile(e){
+        let file = e.target.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+        const API_URL = "http://localhost:8080/courses/uploadMarks"
+        axios.post(API_URL,formData)
+        .then(response => {
+          console.log(response.data)
+          this.setState({
+            marksfile: response.data
+          })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      }
+
       enrollCourse(){
         var email = emailadd
         var username = name
@@ -58,7 +79,9 @@ export default class CourseEnroll extends Component{
             instituteName: this.state.currentCourse.institute_name,
             title: this.state.currentCourse.title,
             useremail: email,
-            username: username
+            username: username,
+            eligibleMarks: this.state.currentCourse.elgibleMarks,
+            marksfile: this.state.marksfile
           };
           CoursesServiceUser.enroll(data)
           .then(response => {
@@ -76,8 +99,8 @@ export default class CourseEnroll extends Component{
                 })
               }
           })
-          .catch(e => {
-            console.log(e);
+          .catch(error => {
+            console.log(error);
           });
       }
 
@@ -124,7 +147,7 @@ export default class CourseEnroll extends Component{
                   </CoursesContainer>
                  )
               ) : (
-              <div className="w-100 was-validated justify-content-center">
+                <div className="w-100 was-validated justify-content-center">
                 <StyledTitle  size={20} color={colors.light1}>
                   <strong>Course Enrollment</strong>
                 </StyledTitle>
@@ -242,6 +265,20 @@ export default class CourseEnroll extends Component{
                   />
             </div>
 
+            <div class="p-3 mb-2 bg-light text-dark">
+                <label htmlFor="elgibleMarks"  className="text-success form-label">
+                  <strong>Eligibility Marks:</strong>
+                </label>
+                  <input
+                    type="text"
+                    readonly class="form-control-plaintext"
+                    id="elgibleMarks"
+                    required
+                    value={currentCourse.elgibleMarks}
+                    name="elgibleMarks"
+                  />
+            </div>
+
 
             <div class="p-3 mb-2 bg-light text-dark">
                 <label htmlFor="hscmarks" className="text-success form-label">
@@ -260,9 +297,38 @@ export default class CourseEnroll extends Component{
                     Percentage is required!
                 </div>
             </div>
+
+            <div class="p-3 mb-2 bg-light text-dark">
+                <label htmlFor="marksfile" className="text-success form-label">
+                  <strong>HSC/12th Marksheet:</strong>
+                </label>
+                  <input
+                    required
+                    type="file"
+                    className="form-control"
+                    id="marksfile"
+                    onChange={this.uploadFile}
+                    name="marksfile"
+                  />
+                <div className="invalid-feedback">
+                    Mark proof is required!
+                </div>
+            </div>
+
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" id="Datacheck" required />
+              <label className="text-white" htmlFor="Datacheck">
+              <strong>I hereby declare that above information is correct to the best of my knowledge.</strong>
+              </label>
+              <div className="invalid-feedback">
+                    Declaration is required!
+              </div>
+            </div>
+            <Container className='text-center'>
             <button type="submit" onClick={this.enrollCourse} className="btn btn-success">
               Enroll Now
             </button>
+            </Container>
 
           </div>
               )}

@@ -38,13 +38,13 @@ class AdmisssionApplicationTests {
 
 	@Test
 	void getCoursesTest() {
-		when(courserepo.findAll()).thenReturn(Stream.of(new Courses(1,"Java","java desc",1004, "RMK", "2022-25", "3 Years"), new Courses(2,"Python","python desc",1004, "RMK", "2022-25", "3 Years")).collect(Collectors.toList()));
+		when(courserepo.findAll()).thenReturn(Stream.of(new Courses(1,"Java","java desc",1004, "RMK", "2022-25", "3 Years", 80), new Courses(2,"Python","python desc",1004, "RMK", "2022-25", "3 Years", 75)).collect(Collectors.toList()));
 		assertEquals(2, courseservice.getAllCourses().size());
 	}
 
 	@Test
 	public void addCourseTest() {
-		Courses course= new Courses(4,"React","React desc",1002, "IIT", "2022-25", "3 Years");
+		Courses course= new Courses(4,"React","React desc",1002, "IIT", "2022-25", "3 Years", 75);
 		when(courserepo.save(course)).thenReturn(course);
 	}
 
