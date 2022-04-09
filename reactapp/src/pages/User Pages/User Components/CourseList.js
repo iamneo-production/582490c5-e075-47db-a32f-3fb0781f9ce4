@@ -144,7 +144,7 @@ export default class CoursesList extends Component{
               <div className="col-md-6">
                   {currentCourse ? (
                       <div>
-                          <h4 class="text-warning">Course</h4>
+                          <h4 class="text-warning"><strong>Course Details</strong></h4>
                           <div class="p-3 mb-2 bg-success text-white">
                               <label>
                                   <strong>Title:</strong>
@@ -174,6 +174,12 @@ export default class CoursesList extends Component{
                                   <strong>Academic Year:</strong>
                               </label>{" "}
                               {currentCourse.academicYear}
+                          </div>
+                          <div class="p-3 mb-2 bg-dark text-white">
+                              <label>
+                                  <strong>Eligibility Criteria:</strong>
+                              </label>{" "}
+                              Minimum of {currentCourse.elgibleMarks}% marks from a recognized Board.
                           </div>
                              <StyledButton to={"/enroll/" + currentCourse.courseid}>Enroll</StyledButton>
                       </div>

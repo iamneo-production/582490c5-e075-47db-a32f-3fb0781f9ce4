@@ -10,17 +10,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.diploma.admisssion.model.CourseRegistration;
 import com.diploma.admisssion.model.Courses;
 import com.diploma.admisssion.service.CourseService;
+import com.diploma.admisssion.service.FileStorageService;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -31,6 +39,9 @@ public class CourseController {
 	
 	@Autowired
 	private CourseService courseservice;
+
+	@Autowired
+	private FileStorageService fileStorageService;
 	
 	@GetMapping("/getAll")
 	@ApiOperation("Fetch all the records of courses")
@@ -80,6 +91,7 @@ public class CourseController {
 			crsdt.setInstitute_name(crs.getInstitute_name());
 			crsdt.setAcademicYear(crs.getAcademicYear());
 			crsdt.setCourseDuration(crs.getCourseDuration());
+			crsdt.setElgibleMarks(crs.getElgibleMarks());
 			Courses editted = courseservice.saveCourse(crsdt);
 
 			List<CourseRegistration> coursereg = courseservice.getCourseRegDetails(crsdt.getTitle());
@@ -87,6 +99,7 @@ public class CourseController {
 				crgs.setAcademicYear(crsdt.getAcademicYear());
 				crgs.setCoursedesc(crsdt.getCourse_desc());
 				crgs.setInstituteName(crsdt.getInstitute_name());
+				crgs.setEligibleMarks(crsdt.getElgibleMarks());
 				courseservice.saveRegistration(crgs);
 			}
 
@@ -174,7 +187,33 @@ public class CourseController {
 			return new ResponseEntity<>(courseservice.getAllRegisteredCourses(),HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	} 
+	}
+
+	@PostMapping("/uploadMarks")
+	@ApiOperation("Upload Marksheet")
+	public ResponseEntity<String> uploadMarks(@RequestParam("file") MultipartFile file) throws IOException{
+		String fileName = fileStorageService.storeFile(file);
+		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+				.path("/courses/")
+				.path(fileName)
+				.toUriString();
+		System.out.println("fileDownloadUri: "+fileDownloadUri);
+		return new ResponseEntity<String>(fileDownloadUri,HttpStatus.OK);
+	}
+
+	@GetMapping("/{fileName:.+}")
+	@ApiOperation("Get Marksheet")
+	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName,HttpServletRequest request) throws IOException{
+		Resource resource = fileStorageService.loadFileAsResource(fileName);
+		String contentType = null;
+		contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+		if(contentType==null) {
+			contentType = "application/octet-stream";
+		}
+		return ResponseEntity.ok()
+				.contentType(MediaType.parseMediaType(contentType))
+				.body(resource);
+	}
 	
 	
 

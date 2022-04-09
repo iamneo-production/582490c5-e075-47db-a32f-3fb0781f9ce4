@@ -81,7 +81,7 @@ export default class CourseUnenroll extends Component{
                     <EnrolledContainer>
                         <StyledFormArea>
                             <StyledTitle color={colors.theme} size={25}>
-                                Do you wish to unenroll from 
+                                Do you wish to delete application for
                                 <br></br>
                                 <strong>
                                 {currentEnrolledCourse.title}

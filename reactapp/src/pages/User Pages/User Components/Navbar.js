@@ -20,10 +20,10 @@ return (
 			Institute
 		</NavLink>
 		<NavLink to='/usercourse' activeStyle>
-			Enroll Course
+			Apply Courses
 		</NavLink>
 		<NavLink to='/courseenrolled' activeStyle>
-			View Enrolled Course
+			View Applied Course
 		</NavLink>
         <NavLink to='/' activeStyle>
 			Logout

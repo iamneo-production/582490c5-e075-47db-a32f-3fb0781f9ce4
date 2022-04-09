@@ -17,28 +17,10 @@ public class Courses {
 	private String institute_name;
 	private String academicYear;
 	private String courseDuration;
+	private int elgibleMarks;
 
-
-	public String getAcademicYear() {
-		return academicYear;
-	}
-
-	public void setAcademicYear(String academicYear) {
-		this.academicYear = academicYear;
-	}
-
-	public String getCourseDuration() {
-		return courseDuration;
-	}
-
-	public void setCourseDuration(String courseDuration) {
-		this.courseDuration = courseDuration;
-	}
-
-	
-	
 	public Courses(int courseid, String title, String course_desc, int instituteid, String institute_name,
-			String academicYear, String courseDuration) {
+			String academicYear, String courseDuration, int elgibleMarks) {
 		this.courseid = courseid;
 		this.title = title;
 		this.course_desc = course_desc;
@@ -46,22 +28,22 @@ public class Courses {
 		this.institute_name = institute_name;
 		this.academicYear = academicYear;
 		this.courseDuration = courseDuration;
+		this.elgibleMarks = elgibleMarks;
 	}
 
+
 	public Courses() {
-		
 	}
+
+
 
 	public int getCourseid() {
 		return courseid;
 	}
 
-
 	public void setCourseid(int courseid) {
 		this.courseid = courseid;
 	}
-
-
 
 	public String getTitle() {
 		return title;
@@ -79,6 +61,13 @@ public class Courses {
 		this.course_desc = course_desc;
 	}
 
+	public int getInstituteid() {
+		return instituteid;
+	}
+
+	public void setInstituteid(int instituteid) {
+		this.instituteid = instituteid;
+	}
 
 	public String getInstitute_name() {
 		return institute_name;
@@ -88,13 +77,36 @@ public class Courses {
 		this.institute_name = institute_name;
 	}
 
-	public int getInstituteid() {
-		return instituteid;
+	public String getAcademicYear() {
+		return academicYear;
 	}
 
-	public void setInstituteid(int instituteid) {
-		this.instituteid = instituteid;
+	public void setAcademicYear(String academicYear) {
+		this.academicYear = academicYear;
 	}
+
+	public String getCourseDuration() {
+		return courseDuration;
+	}
+
+	public void setCourseDuration(String courseDuration) {
+		this.courseDuration = courseDuration;
+	}
+
+	public int getElgibleMarks() {
+		return elgibleMarks;
+	}
+
+	public void setElgibleMarks(int elgibleMarks) {
+		this.elgibleMarks = elgibleMarks;
+	}
+
+	
+
+	
+
+
+	
 
 	
 	

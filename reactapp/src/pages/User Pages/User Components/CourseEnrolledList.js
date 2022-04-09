@@ -48,7 +48,7 @@ export default class EnrolledCoursesList extends Component{
               {this.state.enrolled ? (
                 <div>
                 <br></br>
-                <h2 className="text-white text-center">Enrolled Courses</h2>
+                <h2 className="text-white text-center">Applied Courses</h2>
                 <br></br>
                 <div className = "row-md-6">
                        <table className = "table table-striped table-light table-bordered table-hover">
@@ -72,7 +72,7 @@ export default class EnrolledCoursesList extends Component{
                                             <td className="align-middle text-center"> {enrolledcourse.instituteName}</td>
                                             <td className="align-middle text-center"> {enrolledcourse.academicYear}</td>
                                             <td className="align-middle text-center">
-                                               <TextLink to={"/unenroll/" + enrolledcourse.regid}>Unenroll</TextLink>
+                                               <TextLink to={"/unenroll/" + enrolledcourse.regid}>Delete Application</TextLink>
                                             </td>
                                        </tr>
                                    )

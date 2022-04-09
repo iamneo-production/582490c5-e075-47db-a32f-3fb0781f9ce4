@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import CourseDataService from './../CourseServiceAdmin/CourseService-Admin'
-import {TextLink, StyledContainer2} from './../../../components/Styles'
+import {StyledContainer2} from './../../../components/Styles'
+import { Link } from "react-router-dom";
 
 export default class AdmissionList extends Component{
     constructor(props){
@@ -46,7 +47,7 @@ export default class AdmissionList extends Component{
                 {this.state.registered ? (
                     <div>
                         <br></br>
-                        <h2 className="text-white text-center">Student Registration Table</h2>
+                        <h2 className="text-white text-center"><strong>Students' Application Table</strong></h2>
                         <br></br>
                         <div className = "row-md-6">
                             <table className = "table table-striped table-light table-bordered table-hover">
@@ -58,8 +59,9 @@ export default class AdmissionList extends Component{
                                         <th>Institute Name</th>
                                         <th>Academic Year</th>
                                         <th>HSC Percentage</th>
-                                        <th>Admit</th>
-                                        <th>Deny</th>
+                                        <th>Eligibility Marks</th>
+                                        <th>Marksheet</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,11 +74,12 @@ export default class AdmissionList extends Component{
                                                 <td className="align-middle text-center"> {registeredCourse.instituteName} </td>
                                                 <td className="align-middle text-center"> {registeredCourse.academicYear} </td>
                                                 <td className="align-middle text-center"> {registeredCourse.hscmarks} </td>
+                                                <td className="align-middle text-center"> {registeredCourse.eligibleMarks} </td>
+                                                <td className="align-middle text-center"><a href={registeredCourse.marksfile}>View Marksheet</a></td>
                                                 <td>
-                                                    <TextLink to={"/admit/"+registeredCourse.regid}>Admit</TextLink>
-                                                </td>
-                                                <td>
-                                                    <TextLink to={"/deny-admission/"+registeredCourse.regid}>Deny</TextLink>
+                                                    {/* <TextLink to={"/admit/"+registeredCourse.regid}>Admit</TextLink> */}
+                                                    <Link style={{marginLeft: "30px", }}className="btn btn-outline-success" to={"/admit/"+registeredCourse.regid}>Admit</Link>
+                                                    <Link style={{marginLeft: "35px"}} className="btn btn-outline-danger" to={"/deny-admission/"+registeredCourse.regid}>Deny</Link>
                                                 </td>
                                             </tr>
                                         )
