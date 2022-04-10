@@ -33,10 +33,8 @@ const hello=({hello,update})=>{
             <CardText><strong>Academic Year: </strong>{hello.academicYear}</CardText>
             <CardText><strong>Eligibility Marks: </strong>{hello.elgibleMarks}</CardText>
             <Container className="text-center">
-                <Button color="danger"
-                onClick={()=>{
-                    deleteCourse(hello.courseid);
-                }}>Delete</Button> 
+                <Link class="btn btn-danger ml-3" to={`/admincourse/view-course/delete/${hello.courseid}`}>Delete</Link>
+                {" "}
                 <Link class="btn btn-warning ml-3" to={`/admincourse/view-course/update/${hello.courseid}`}>Update</Link>
             </Container>
             </CardBody>
