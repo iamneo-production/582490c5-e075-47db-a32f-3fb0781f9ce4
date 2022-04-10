@@ -181,7 +181,7 @@ export default class CoursesList extends Component{
                               </label>{" "}
                               Minimum of {currentCourse.elgibleMarks}% marks from a recognized Board.
                           </div>
-                             <StyledButton to={"/enroll/" + currentCourse.courseid}>Enroll</StyledButton>
+                             <StyledButton to={"/enroll/" + currentCourse.courseid}>Apply</StyledButton>
                       </div>
                   ):(
                       <div class="p-3 mb-2 bg-warning text-dark">

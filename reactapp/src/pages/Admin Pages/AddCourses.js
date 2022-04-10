@@ -86,6 +86,13 @@ const AddCourses=()=> {
             setCourses({...courses,academicYear:e.target.value})
           }}/>
           </FormGroup>
+          <FormGroup>
+          <Label for="title" ><strong>Eligibility Marks</strong></Label>
+          <Input type="text" name="title" id="title" placeholder="Enter eligibility marks" required
+          onChange={(e)=>{
+            setCourses({...courses,elgibleMarks:e.target.value})
+          }}/>
+          </FormGroup>
       <Container className='text-center'>
           <Button type="submit" color="success">Add</Button>
           <Button type="reset"color="warning ml-3">Clear</Button>

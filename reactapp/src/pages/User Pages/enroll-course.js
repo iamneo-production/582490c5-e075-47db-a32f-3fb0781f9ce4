@@ -115,14 +115,14 @@ export default class CourseEnroll extends Component{
                       <StyledFormArea>
                           <StyledTitle color={colors.red} size={25}>
                               <strong>
-                              You have already enrolled into the Course!
+                              You have already applied to this Course!
                               </strong>
                           </StyledTitle>
                           <StyledTitle color={colors.dark2} size={20}>
-                              <TextLink to="/courseenrolled">View Enrolled Courses</TextLink>
+                              <TextLink to="/courseenrolled">View Applied Courses</TextLink>
                           </StyledTitle>
                           <StyledTitle color={colors.dark2} size={20}>
-                              Enroll new Course ? <TextLink to="/usercourse">Click Here</TextLink>
+                              Apply new Course ? <TextLink to="/usercourse">Click Here</TextLink>
                           </StyledTitle>
                       </StyledFormArea>
                   </div>
@@ -133,14 +133,14 @@ export default class CourseEnroll extends Component{
                       <StyledFormArea>
                           <StyledTitle color={colors.green} size={25}>
                           <strong>
-                              You have enrolled into the Course Successfully!
+                              You have applied for the Course Successfully!
                           </strong>
                           </StyledTitle>
                           <StyledTitle color={colors.dark2} size={20}>
-                            <TextLink to="/courseenrolled">View Enrolled Courses</TextLink>
+                            <TextLink to="/courseenrolled">View Applied Courses</TextLink>
                           </StyledTitle>
                           <StyledTitle color={colors.dark2} size={20}>
-                              Enroll another Course ? <TextLink to="/usercourse">Click Here</TextLink>
+                              Apply another Course ? <TextLink to="/usercourse">Click Here</TextLink>
                           </StyledTitle>
                       </StyledFormArea>
                   </div>
@@ -149,7 +149,7 @@ export default class CourseEnroll extends Component{
               ) : (
                 <div className="w-100 was-validated justify-content-center">
                 <StyledTitle  size={20} color={colors.light1}>
-                  <strong>Course Enrollment</strong>
+                  <strong>Course Application Form</strong>
                 </StyledTitle>
                 <div class="p-3 mb-2 bg-light text-dark">
                     <label htmlFor="title" className="text-success form-label">
@@ -326,7 +326,7 @@ export default class CourseEnroll extends Component{
             </div>
             <Container className='text-center'>
             <button type="submit" onClick={this.enrollCourse} className="btn btn-success">
-              Enroll Now
+              Apply Now
             </button>
             </Container>
 

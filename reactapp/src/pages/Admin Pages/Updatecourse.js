@@ -109,6 +109,14 @@ function Updatecourse(props) {
             setCourses({...courses,academicYear:e.target.value})
           }}/>
           </FormGroup>
+          <FormGroup>
+          <Label for="title" ><strong>Eligibility Marks</strong></Label>
+          <Input type="text" name="title" id="title" placeholder="Enter eligible marks" required
+          value={courses.elgibleMarks}
+          onChange={(e)=>{
+            setCourses({...courses,elgibleMarks:e.target.value})
+          }}/>
+          </FormGroup>
       <Container className='text-center'>
           <Button type="submit" color="success">Update</Button>
         </Container>
