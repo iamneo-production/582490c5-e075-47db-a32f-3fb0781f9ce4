@@ -28,9 +28,10 @@ const hello=({hello,update})=>{
             <CardBody>
             <CardSubtitle className="font-weight-bold"><strong>{hello.title}</strong> </CardSubtitle>
             <CardText>{hello.course_desc}</CardText>
-            <CardText>{hello.institute_name}</CardText>
-            <CardText>{hello.courseDuration}</CardText>
-            <CardText>{hello.academicYear}</CardText>
+            <CardText><strong>Institute Name: </strong>{hello.institute_name}</CardText>
+            <CardText><strong>Course Duration: </strong>{hello.courseDuration}</CardText>
+            <CardText><strong>Academic Year: </strong>{hello.academicYear}</CardText>
+            <CardText><strong>Eligibility Marks: </strong>{hello.elgibleMarks}</CardText>
             <Container className="text-center">
                 <Button color="danger"
                 onClick={()=>{
