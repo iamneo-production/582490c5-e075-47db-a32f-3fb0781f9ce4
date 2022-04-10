@@ -43,7 +43,7 @@ const CollegeCard = ({ collegedata }) => {
                   <span className="card-tag subtle">Delete</span> */}
                   <br></br>
                   <Link className="btn btn-warning" to={`/editAcademy/${institutesId}`}>Edit</Link>
-                  <button type="button" className="btn btn-danger" onClick={()=> {deleteInstitute(institutesId)}}>Delete</button>
+                  <Link className="btn btn-danger" to={`/deleteAcademy/${institutesId}`}>Delete</Link>
                 </div>
               </div>
             </>

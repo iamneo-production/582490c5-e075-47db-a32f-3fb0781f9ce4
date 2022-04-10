@@ -95,6 +95,7 @@ const AddCourses=()=> {
           </FormGroup>
       <Container className='text-center'>
           <Button type="submit" color="success">Add</Button>
+          {"  "}
           <Button type="reset"color="warning ml-3">Clear</Button>
         </Container>
      </Form>

@@ -305,6 +305,7 @@ export default class CourseEnroll extends Component{
                   <input
                     required
                     type="file"
+                    accept=".pdf"
                     className="form-control"
                     id="marksfile"
                     onChange={this.uploadFile}

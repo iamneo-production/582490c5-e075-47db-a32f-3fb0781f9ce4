@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CoursesServiceUser from "./CourseService-User/CoursesService-User";
 import {emailadd} from './../Login'
+import { Link } from "react-router-dom";
 import {TextLink, StyledFormArea, StyledTitle, colors, EnrolledContainer} from './../../components/Styles'
 
 export default class CourseUnenroll extends Component{
@@ -88,8 +89,10 @@ export default class CourseUnenroll extends Component{
                                 </strong> ?
                             </StyledTitle>
                             <button type="submit" onClick={this.unenrollCourse} className="btn btn-danger">
-                                Unenroll Now
+                                Delete
                             </button>
+                            {" "}
+                            <Link className="btn btn-success" to={'/courseenrolled'}>Cancel</Link>
                         </StyledFormArea>
                     </EnrolledContainer>
                 )}

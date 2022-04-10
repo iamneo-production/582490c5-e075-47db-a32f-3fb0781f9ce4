@@ -19,7 +19,7 @@ import {
   } from "react-router-dom";
 import { ToastContainer } from "react-bootstrap";
 import Updatecourse from "./Updatecourse";
-  
+import DeleteCourse from "./DeleteCourse"; 
 
 const Course = () => {
   return (
@@ -52,6 +52,7 @@ const Course = () => {
 			  <Route path="/admincourse/add-course" component={AddCourses} exact/>
 			  <Route path="/admincourse/view-course" component={Allcourses} exact/>
 			  <Route path="/admincourse/view-course/update/:id" component={Updatecourse} exact/>
+			  <Route path="/admincourse/view-course/delete/:id" component={DeleteCourse} exact/>
 
 			  </Col>
 		  </Row>
