@@ -3,6 +3,7 @@ import { Form, FormGroup, Input, Label, Container, Button } from 'reactstrap';
 import axios from 'axios';
 import base_url from '../../coursesapi';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {TextLink} from './../../components/Styles'
 
@@ -81,8 +82,12 @@ function EditAcademy(props){
                         }}
                         />
             </FormGroup>
+            <img src={process.env.PUBLIC_URL + '/' +institutes.imgLocation} className="rounded mx-auto d-block" width="500" height="400"/>
+            <br></br>
             <Container className='text-center'>
-                    <Button type="submit" color="success">Update</Button>
+                    <Button type="submit" color="warning">Update</Button>
+                    {" "}
+                    <Link className='btn btn-success' to={'/admininstitute'}>Cancel</Link>
             </Container>
             </Form>
             <br></br>
