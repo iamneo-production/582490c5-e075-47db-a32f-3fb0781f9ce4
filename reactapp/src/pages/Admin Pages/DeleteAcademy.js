@@ -40,10 +40,15 @@ function DeleteAcademy(props){
         <Fragment>
             <Container className='text-center'>
                 <br></br>
-                <h3>Do you wish to delete this Institute?</h3>
+                <h3 className='text-danger'>Do you wish to delete this Institute?</h3>
+                <br></br>
+                <h2><strong>{institutes.institueName} - {institutes.institutePlace}</strong></h2>
+                <img src={process.env.PUBLIC_URL + '/' +institutes.imgLocation} className="rounded mx-auto d-block" width="500" height="400"/>
+                <br></br>
+                <p className="text-dark h4">{institutes.instituteDescription}</p>
                 <br></br>
 
-                <table className = "table table-striped table-light table-bordered table-hover">
+                {/* <table className = "table table-striped table-light table-bordered table-hover">
                 <thead className="text-center">
                     <tr>
                         <th>Institute Name</th>
@@ -60,7 +65,7 @@ function DeleteAcademy(props){
                     </tr>
                 </tbody>
 
-                </table>
+                </table> */}
 
             <button type="submit" className="btn btn-danger" onClick={()=>DeleteAcademy(institutes.institutesId)}>
                 Delete

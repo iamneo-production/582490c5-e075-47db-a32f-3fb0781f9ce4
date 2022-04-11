@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Form, FormGroup, Input, Label, Container, Button } from 'reactstrap';
 import axios from 'axios';
 import base_url from '../../coursesapi';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function Updatecourse(props) {
@@ -118,7 +118,9 @@ function Updatecourse(props) {
           }}/>
           </FormGroup>
       <Container className='text-center'>
-          <Button type="submit" color="success">Update</Button>
+          <Button type="submit" color="warning">Update</Button>
+          {" "}
+          <Link className='btn btn-success' to={'/admincourse/view-course'}>Cancel</Link>
         </Container>
      </Form>
      </Fragment>

@@ -40,7 +40,7 @@ function DeleteCourse(props){
         <Fragment>
             <Container className='text-center'>
             <br></br>
-            <h3>Do you wish to delete this course?</h3>
+            <h3 className='text-danger'>Do you wish to delete this course?</h3>
             <br></br>
             <table className = "table table-striped table-light table-bordered table-hover">
                 <thead className="text-center">
