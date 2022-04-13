@@ -67,14 +67,14 @@ export default class CourseUnenroll extends Component{
                         <StyledFormArea>
                             <StyledTitle color={colors.green} size={25}>
                                 <strong>
-                                You have unenrolled from the course successfully!
+                                You have deleted your application successfully!
                                 </strong>
                             </StyledTitle>
                             <StyledTitle color={colors.dark2} size={20}>
-                               <TextLink to="/courseenrolled">View Enrolled Courses</TextLink>
+                               <TextLink to="/courseenrolled">View Applied Courses</TextLink>
                             </StyledTitle>
                             <StyledTitle color={colors.dark2} size={20}>
-                              Enroll another Course ? <TextLink to="/usercourse">Click Here</TextLink>
+                              Apply another Course ? <TextLink to="/usercourse">Click Here</TextLink>
                           </StyledTitle>
                         </StyledFormArea>
                     </EnrolledContainer>
